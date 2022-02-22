@@ -1,0 +1,45 @@
+@use './colors';
+
+.button {
+    border: .1rem solid transparent;
+    font-size: 1.6rem;
+    padding: 1.2rem 3rem;
+    height: 5.1rem;
+    letter-spacing: .25rem;
+    font-weight: 600;
+    appearance: none;
+    text-transform: uppercase;
+    border-radius: .8rem;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.95;
+    }
+
+    &:focus, &:active {
+        opacity: 0.75;
+    }
+
+    + .button {
+        margin-left: 2rem;
+    }
+
+    svg, img {
+        margin-left: 1rem;
+        height: 1.6rem;
+        vertical-align: middle;
+    }
+
+    &--primary {
+        background-color: colors.$teal;
+        border-color: colors.$teal;
+        color: colors.$white;
+    }
+
+    &--secondary {
+        background-color: colors.$white;
+        border-color: colors.$teal;
+        color: colors.$teal;
+    }
+}

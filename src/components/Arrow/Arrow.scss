@@ -1,0 +1,28 @@
+@use '../../styles/colors';
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    fill: colors.$teal;
+    z-index: 2;
+    cursor: pointer;
+
+  
+    &--left {
+        left: 5px;
+    }
+  
+    &--right {
+        left: auto;
+        right: 5px;
+    }
+  
+    &--disabled {
+        fill: rgba(colors.$teal, 0.3);
+        cursor: not-allowed;
+    }
+}

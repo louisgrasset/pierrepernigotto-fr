@@ -1,0 +1,10 @@
+@use '../../styles/mixins';
+@use '../../styles/colors';
+
+.section-business {
+    @include mixins.section;
+
+    p {
+        color: colors.$teal;
+    }
+}

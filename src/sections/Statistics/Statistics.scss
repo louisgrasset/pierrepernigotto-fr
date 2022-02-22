@@ -1,0 +1,70 @@
+@use '../../styles/colors';
+@use  '../../styles/mixins';
+
+.section-statistics {
+    @include mixins.section;
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+            display: inline-block;
+            position: relative;
+            margin: 0 auto;
+            align-items: center;
+            text-align: left;
+            font-weight: 500;
+            color: colors.$grey;
+
+            &__count {
+                color: colors.$primary;
+                font-size: 6rem;
+                font-weight: 600;
+                display: block;
+                &:not(:first-child) {
+                    display: inline;
+                }
+                span {
+                    display: inline;
+                }
+            }
+
+            &:first-child {
+                position: relative;
+                z-index: 1;
+                text-align: center;
+                color: colors.$white;
+                font-size: 1.4rem;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-color: colors.$secondary;
+                    border-radius: 50%;
+                    height: 20rem;
+                    width: 20rem;
+                    top: calc(50% - 10rem);
+                    left: calc(50% - 10rem);
+                    z-index: -1;
+                }
+                
+                span {
+                    position: relative;
+                    z-index: 1;
+                    color: inherit;
+                    font-size: 10rem;
+                    line-height: 9rem;
+                }
+            }
+            &--separator {
+                font-size: 6rem;
+                color: rgba(colors.$teal, 40%);
+                width: 2.5rem;
+                text-align: center;
+            }
+        }
+    }
+}

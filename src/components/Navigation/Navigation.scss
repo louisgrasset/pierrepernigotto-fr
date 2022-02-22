@@ -1,0 +1,45 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+@use '../../styles/breakpoints';
+
+.navigation {
+    @include mixins.section;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 0;
+    font-size: 2rem;
+    &-logo {
+        font-weight: 600;
+        span {
+            color: colors.$secondary;
+        }
+    }
+    &-list {
+        font-weight: 500;
+        display: flex;
+        column-gap: 4rem;
+        margin: 0;
+        list-style: none;
+        &__item {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            &::after {
+                bottom: -.4rem;
+                content: '';
+                position: absolute;
+                height: .3rem;
+                width: 0;
+                left: 0;
+                transition: width .3s ease-out;
+                background-color: colors.$teal;
+            }
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

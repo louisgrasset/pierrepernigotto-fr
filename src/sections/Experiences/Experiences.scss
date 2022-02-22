@@ -1,0 +1,120 @@
+@use '../../styles/mixins';
+@use '../../styles/colors';
+@use 'sass:math';
+
+.section-experiences {
+    @include mixins.section;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+    &__wrapper {
+        display: flex;
+        column-gap: 12rem;
+    }
+
+    .experience {
+        margin-top: 4rem;
+        &__company {
+            display: grid;
+            grid-template-columns: 8rem 1fr;
+            margin-bottom: 4rem;
+
+            &-logo {
+                height: 6rem;
+                width: 6rem;
+            }
+
+            &-name {
+                font-weight: 600;
+                font-size: 3rem;
+                margin: 0;
+            }
+
+            &-location {
+                margin: 0;
+                color: colors.$teal;
+            }
+        }
+
+        .tag {
+            @include mixins.tag;
+        }
+
+        &__positions {
+            list-style: none;
+            padding: 0;
+        }
+
+        &__position {
+            &-item {
+                $offset: 3rem;
+
+                margin-bottom: #{$offset};
+                padding-left: 6rem;
+                position: relative;
+                &::before {
+                    content: '';
+                    height: calc(100% + #{$offset});
+                    width: .2rem;
+                    background-color: colors.$teal;
+                    position: absolute;
+                    top: 1rem;
+                    left: #{2.5rem + .2rem};
+                }
+                &::after {
+                    $size: 1rem;
+
+                    content: '';
+
+                    height: #{$size};
+                    width: #{$size};
+                    border-radius: 50%;
+                    background-color: colors.$teal;
+                    position: absolute;
+                    top: .5rem;
+                    left: #{$size + 1.25rem};
+                }
+                &:first-child {
+                    &::after {
+                        $size: 2rem;
+
+                        box-sizing: border-box;
+                        border-spacing: 1rem;
+                        border: .3rem solid colors.$teal;
+                        width: $size;
+                        height: $size;
+                        background-color: lighten(colors.$teal, 30%);
+                        left: #{math.div($size, 2) + .8rem};
+                    }
+                }
+            }
+            &-label {
+                margin: 0;
+                font-size: 2rem;
+                font-weight: 600;
+            }  
+            &-dates {
+                color: colors.$teal;
+                font-weight: 500;
+                margin: 0.5rem 0 1rem 0;
+            }
+            &-detail {
+                &__toggle {
+                    margin-right: 1rem;
+                    appearance: none;
+                    border-radius: .5rem;
+                    font-weight: 600;
+                    background-color: colors.$secondary;
+                    color: colors.$white;
+                    border: .4px solid  colors.$secondary;
+                    cursor: pointer;
+                    width: 2.5rem;
+                    text-align: center;
+                }
+                &__content {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}

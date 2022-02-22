@@ -1,0 +1,19 @@
+@use '../../styles/colors';
+
+.header {
+    &-title {
+        font-size: 4rem;
+        font-weight: 600;
+        max-width: 40rem;
+        margin-bottom: .5rem;
+    
+        span {
+            color: colors.$secondary;
+        }
+    }
+
+    &-detail {
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+}

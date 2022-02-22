@@ -1,0 +1,101 @@
+@use '../../styles/mixins';
+@use '../../styles/colors';
+
+.section-contact {
+    background-color: colors.$primary;
+    border-top: 1rem solid colors.$teal;
+    position: relative;
+    overflow-y: hidden;
+    margin-top: 10rem;
+
+    &__wrapper {
+        @include mixins.section;
+        position: relative;
+        height: 60rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .header {
+            color: colors.$white;
+            z-index: 2;
+            position: relative;
+        }
+    }
+
+    .profile {
+        mix-blend-mode: exclusion;
+        opacity: 0.6;
+        width: 60rem;
+        left: -30rem;
+        position: absolute;
+        top: -17rem;
+        svg {
+            height: 100%;
+        }
+    }
+
+    &__form {
+        $form: &;
+        position: relative;
+        z-index: 2;
+        align-self: center;
+        &-item {
+            width: 100%;
+            position: relative;
+            margin-bottom: 3rem;
+            
+            label {
+                display: inline;
+                color: colors.$white;
+                letter-spacing: 0.25rem;
+                text-transform: uppercase;
+                position: absolute;
+                top: -2rem;
+                z-index: 2;
+            }
+            input {
+                height: 4.5rem;
+            }
+            input, textarea {
+                box-sizing: border-box;
+                color: colors.$primary;
+                padding: 1rem 1.4rem;
+                border-radius: .5rem;
+                border: .1rem solid colors.$teal;
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                font-size: 1.8rem;
+                letter-spacing: .1rem;
+                font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                    sans-serif;
+                &:focus {
+                    outline-color: colors.$teal;
+                }
+                + label {
+                    font-size: 1.2rem;
+                    transition: all .2s ease-out;
+                    color: colors.$white;
+                }
+                &:not(:focus):placeholder-shown{
+                    & + label {
+                        transform: translateX(2rem) translateY(3.35rem);
+                        color: colors.$teal;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+ 
+            textarea {
+                min-height: 10rem;
+            }
+        }
+
+        &-group-item {
+            display: flex;
+            column-gap: 2rem;
+        }
+    }
+}

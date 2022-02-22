@@ -1,0 +1,41 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+@use '../../styles/breakpoints';
+
+.section-hero {
+    background-color: rgba(colors.$teal, 10%);
+    padding-bottom: 5rem;
+
+    &__header {
+        font-size: 10rem;
+        margin-bottom: 4rem;
+        line-height: 10rem;
+        
+        span {
+            color: colors.$secondary;
+        }
+    }
+
+    &__subcontent {
+        color: colors.$teal;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    &__actions {
+        margin: 4rem 0;
+        button:not(:first-child) {
+            margin-left: 2rem
+        }
+    }
+
+    &__wrapper {
+        @include mixins.section;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+
+        .profile {
+            width: 55rem;
+        }
+    }
+}
