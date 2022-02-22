@@ -1,4 +1,4 @@
-import './Header.scss';
+import "./Header.scss";
 
 interface HeaderProps {
     content: string
@@ -17,5 +17,5 @@ export function Header ({ content, detail }: HeaderProps) {
                 )
             }
         </div>
-    )
+    );
 }

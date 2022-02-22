@@ -1,8 +1,10 @@
-import { Header } from "../../components";
-import { Experience, Position } from "../../types";
 import "./Experiences.scss";
+
 import { useCallback, useMemo, useState } from "react";
+
+import { Header } from "../../components";
 import { fivescryo, regiongrandest } from "../../data";
+import { Experience, Position } from "../../types";
 import { getPeriodDuration } from "../../utils";
 
 interface ExperienceItemProps {
@@ -15,8 +17,8 @@ export function ExperienceItem ({ position }: ExperienceItemProps) {
     return (
         <li className="experience__position-item">
             <h5 className="experience__position-label">{position.label}</h5>
-            <p className="experience__position-dates">{position.start.toLocaleString("fr-fr", {year: "numeric", month:"long"})} à {position.end ? position.end.toLocaleString("fr-fr", {year: "numeric", month:"long"}) : "maintenant"} {}</p>
-            <button className="experience__position-detail__toggle" onClick={() => setToggle(!toggle)} title="Voir le detail">
+            <p className="experience__position-dates">{position.start.toLocaleString("fr-fr", { year: "numeric", month:"long" })} à {position.end ? position.end.toLocaleString("fr-fr", { year: "numeric", month:"long" }) : "maintenant"} {}</p>
+            <button className="experience__position-detail__toggle" onClick={() => setToggle(! toggle)} title="Voir le detail">
                 { toggle ? "-" : "+" }
             </button>
             {
@@ -32,7 +34,7 @@ export function ExperienceItem ({ position }: ExperienceItemProps) {
                 )
             }
         </li>
-    )
+    );
 }
 
 export function Experiences () {
@@ -81,14 +83,14 @@ export function Experiences () {
                 }
             ]
         }
-    ]
-    
-    const getExperienceDuration = useCallback((startPosition: Position, endPosition: Position) => 
-         getPeriodDuration(startPosition.start, endPosition.end)
+    ];
+
+    const getExperienceDuration = useCallback((startPosition: Position, endPosition: Position) =>
+        getPeriodDuration(startPosition.start, endPosition.end)
     , []);
 
-    const experiences = useMemo(() => 
-        data.map(({company, positions}) =>
+    const experiences = useMemo(() =>
+        data.map(({ company, positions }) =>
             <div className="experience" key={company.id}>
                 <div className="experience__company">
                     <img className="experience__company-logo" src={`/images/companies/${company.id}.svg`} alt={company.name} />
@@ -105,8 +107,8 @@ export function Experiences () {
                     }
                 </ul>
             </div>
-        ), []
-    )
+        ), [data, getExperienceDuration]
+    );
 
     return (
         <section className="section-experiences" id="experiences">
@@ -115,5 +117,5 @@ export function Experiences () {
                 { experiences }
             </div>
         </section>
-    )
+    );
 }

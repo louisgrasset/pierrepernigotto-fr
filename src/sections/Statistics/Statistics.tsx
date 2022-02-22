@@ -1,8 +1,9 @@
-import './Statistics.scss';
+import "./Statistics.scss";
 
+import { useMemo } from "react";
 import CountUp from "react-countup";
-import { Information } from '../../components';
-import { useMemo } from 'react';
+
+import { Information } from "../../components";
 
 export function Statistics () {
     const experience = useMemo(() => new Date().getFullYear() - 2018, []);
@@ -32,15 +33,15 @@ export function Statistics () {
                 <li className="section-statistics__list-item">
                     <span className="section-statistics__list-item__count">Hardskills</span>
                     + <CountUp end={hardskills.length} duration={1} /> technologies maitrisées
-                    <Information content={ hardskills.join(', ')+'...' }/>
+                    <Information content={ hardskills.join(", ")+"..." }/>
                 </li>
                 <li className='section-statistics__list-item section-statistics__list-item--separator' aria-hidden>/</li>
                 <li className="section-statistics__list-item">
                     <span className="section-statistics__list-item__count">Softkills</span>
                     + <CountUp end={softskills.length} duration={1} /> qualités
-                    <Information content={ softskills.join(', ')+'...' }/>
+                    <Information content={ softskills.join(", ")+"..." }/>
                 </li>
             </ul>
         </section>
-    )
+    );
 }

@@ -1,95 +1,101 @@
 @use '../../styles/colors';
 @use '../../styles/breakpoints';
-@use  '../../styles/mixins';
+@use '../../styles/mixins';
 
 .section-statistics {
     $statistics: &;
+
     @include mixins.section;
 
     &__list {
-
-        list-style: none;
-        padding: 0;
         display: flex;
         justify-content: space-between;
-        
+        list-style: none;
+        padding: 0;
+
         @media screen and (max-width: breakpoints.$md) {
             flex-direction: column;
         }
 
         &-item {
-            display: inline-block;
-            position: relative;
-            margin: 0 auto;
             align-items: center;
-            text-align: left;
-            font-weight: 500;
             color: colors.$grey;
-
+            display: inline-block;
+            font-weight: 500;
+            margin: 0 auto;
+            position: relative;
+            text-align: left;
 
             @media screen and (max-width: breakpoints.$md) {
                 margin-bottom: 6rem;
+
                 &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -4rem;
-                    width: 3rem;
-                    height: .3rem;
                     background-color: rgba(colors.$secondary, 40%);
+                    bottom: -4rem;
+                    content: '';
+                    height: 0.3rem;
                     left: calc(50% - 1.5rem);
+                    position: absolute;
+                    width: 3rem;
                 }
             }
+
             &__count {
                 color: colors.$primary;
+                display: block;
                 font-size: 6rem;
                 font-weight: 600;
-                display: block;
+
                 &:not(:first-child) {
                     display: inline;
                 }
+
                 span {
                     display: inline;
                 }
+
                 @media screen and (min-width: breakpoints.$md) and (max-width: breakpoints.$lg) {
                     font-size: 4rem;
                 }
             }
 
             &:first-child {
-                position: relative;
-                z-index: 1;
-                text-align: center;
                 color: colors.$white;
                 font-size: 1.4rem;
+                position: relative;
+                text-align: center;
+                z-index: 1;
+
                 @media screen and (min-width: breakpoints.$md) and (max-width: breakpoints.$lg) {
                     transform: scale(0.7);
                 }
 
                 &::before {
-                    content: '';
-                    position: absolute;
                     background-color: colors.$secondary;
                     border-radius: 50%;
+                    content: '';
                     height: 20rem;
-                    width: 20rem;
-                    top: calc(50% - 10rem);
                     left: calc(50% - 10rem);
+                    position: absolute;
+                    top: calc(50% - 10rem);
+                    width: 20rem;
                     z-index: -1;
                 }
-                
+
                 span {
-                    position: relative;
-                    z-index: 1;
                     color: inherit;
                     font-size: 10rem;
                     line-height: 9rem;
+                    position: relative;
+                    z-index: 1;
                 }
             }
+
             &--separator {
-                font-size: 6rem;
                 color: rgba(colors.$teal, 40%);
-                width: 2.5rem;
+                font-size: 6rem;
                 text-align: center;
+                width: 2.5rem;
 
                 @media screen and (max-width: breakpoints.$md) {
                     display: none;

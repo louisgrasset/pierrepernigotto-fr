@@ -1,6 +1,7 @@
 import "./Navigation.scss";
+
+import { useState } from "react";
 import { Link as Link } from "react-scroll";
-import { useState } from 'react';
 
 export function Navigation () {
     const [toggle, setToggle] = useState(false);
@@ -8,7 +9,7 @@ export function Navigation () {
     return (
         <nav className={"navigation" + (toggle ? " navigation--active" : "")}>
             <a className="navigation__logo" href="./">PierrePernigotto<span>.fr</span></a>
-            <button className="navigation__toggle" onClick={()=> setToggle(!toggle)}>
+            <button className="navigation__toggle" onClick={()=> setToggle(! toggle)}>
                 {toggle ? "Fermer" : "Menu" }
             </button>
             <div className="navigation__wrapper">
@@ -76,5 +77,5 @@ export function Navigation () {
                 </ul>
             </div>
         </nav>
-    )
+    );
 }

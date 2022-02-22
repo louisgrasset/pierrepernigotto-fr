@@ -1,5 +1,5 @@
 export type Company = {
-    name: string, 
+    name: string,
     id: string
     location: string
 }

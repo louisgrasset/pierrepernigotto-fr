@@ -1,63 +1,65 @@
-import { Header, Slider } from '../../components';
-import { Skill } from '../../types';
-import './Skills.scss';
-import { useMemo } from 'react';
+import "./Skills.scss";
+
+import { useMemo } from "react";
+
+import { Header, Slider } from "../../components";
+import { Skill } from "../../types";
 
 export function Skills () {
-    const skills: Skill[] = [
+    const skills: Skill[] = useMemo(() => [
         {
-            name: 'Gantt Project',
-            id: 'ganttproject',
-            detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            name: "Gantt Project",
+            id: "ganttproject",
+            detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            name: 'Gantt Project',
-            id: 'ganttproject',
-            detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            name: "Gantt Project",
+            id: "ganttproject",
+            detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            name: 'Gantt Project',
-            id: 'ganttproject',
-            detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            name: "Gantt Project",
+            id: "ganttproject",
+            detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            name: 'Gantt Project',
-            id: 'ganttproject',
-            detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            name: "Gantt Project",
+            id: "ganttproject",
+            detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            name: 'AAAA Project',
-            id: 'ganttproject',
-            detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            name: "AAAA Project",
+            id: "ganttproject",
+            detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
-            name: 'Gantt Project',
-            id: 'ganttproject',
-            detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            name: "Gantt Project",
+            id: "ganttproject",
+            detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         }
-    ]
+    ], []);
 
     const skillPagination = useMemo(()=> {
-        let remainingSkills = Array.from(skills);
-        let pagination : Skill[][] = [[]];
+        const remainingSkills = Array.from(skills);
+        const pagination : Skill[][] = [[]];
         let current = 0;
-        while(remainingSkills.length > 0) {
-            for(let index = 0; index < 4; index++) {
-                let skill = remainingSkills.shift();
-                if(index === 0) {
+        while (remainingSkills.length > 0) {
+            for (let index = 0; index < 4; index ++) {
+                const skill = remainingSkills.shift();
+                if (index === 0) {
                     pagination[current] = [];
                 }
-                if(skill) {
+                if (skill) {
                     pagination[current].push(skill);
                 }
-                if(index === 3) {
+                if (index === 3) {
                     current += 1;
                 }
             }
         }
-        console.log(pagination)
+        console.log(pagination);
         return pagination;
-    },[skills])
+    },[skills]);
 
     return (
         <section className="section-skills" id="competences">
@@ -78,9 +80,9 @@ export function Skills () {
                                 ))
                             }
                         </div>
-                        ))
+                    ))
                 }
             </Slider>
         </section>
-    )
+    );
 }

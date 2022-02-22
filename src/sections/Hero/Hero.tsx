@@ -1,6 +1,8 @@
-import { Link } from 'react-scroll';
-import { Navigation, Profile } from '../../components';
-import './Hero.scss';
+import "./Hero.scss";
+
+import { Link } from "react-scroll";
+
+import { Navigation, Profile } from "../../components";
 
 export function Hero () {
     return (
@@ -12,7 +14,7 @@ export function Hero () {
                         Pierre<br />Pernigotto<span>.</span>
                     </h1>
                     <h2 className='section-hero__subcontent'>
-                    Actuellement Chargé de mission IT chez <a href="https://www.fivesgroup.com/fr/energy-cryogenics" target="_blank">Fives Cryo</a>, je suis prêt à entamer le prochain chapitre de ma carrière professionnelle.<br /><br />
+                    Actuellement Chargé de mission IT chez <a href="https://www.fivesgroup.com/fr/energy-cryogenics" target="_blank" rel="noreferrer">Fives Cryo</a>, je suis prêt à entamer le prochain chapitre de ma carrière professionnelle.<br /><br />
                     "Cookie : Anciennement petit gâteau sucré, qu'on acceptait avec plaisir. Aujourd'hui : petit fichier informatique drôlement salé, qu'il faut refuser avec véhémence." - Luc Fayard
                     </h2>
                     <div className="section-hero__actions">
@@ -23,11 +25,11 @@ export function Hero () {
                             duration={500}
                             offset={- 50}>
                                 En savoir plus
-                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.2992 0V8.99004L1.697 5.46469L0 7.12549L5.65145 12.6564C5.87659 12.8763 6.18184 13 6.5 13C6.81816 13 7.12341 12.8763 7.34855 12.6564L13 7.12549L11.303 5.46469L7.7008 8.99004V0H5.2992Z" fill="currentColor"/>
-                                </svg>
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.2992 0V8.99004L1.697 5.46469L0 7.12549L5.65145 12.6564C5.87659 12.8763 6.18184 13 6.5 13C6.81816 13 7.12341 12.8763 7.34855 12.6564L13 7.12549L11.303 5.46469L7.7008 8.99004V0H5.2992Z" fill="currentColor"/>
+                            </svg>
                         </Link>
-                        
+
                         <Link
                             className='button button--secondary'
                             to="contact"
@@ -43,5 +45,5 @@ export function Hero () {
                 </div>
             </div>
         </section>
-    )
+    );
 }

@@ -1,21 +1,23 @@
 @use './colors';
 
 .rc-tooltip {
-    max-width: 25rem;
-    border-radius: .3rem;
-    opacity: 1;
     background-color: lighten(desaturate(colors.$teal, 10%), 30%);
+    border-radius: 0.3rem;
+    max-width: 25rem;
+    opacity: 1;
 
     &-inner {
-        padding: 1rem 1.6rem;
+        background: transparent;
+        border: none;
+        color: colors.$teal;
         font-size: 1.6rem;
         font-weight: 500;
-        border: none;
-        background: transparent;
-        color: colors.$teal;
+        padding: 1rem 1.6rem;
     }
 }
-.rc-tooltip-placement-bottom .rc-tooltip-arrow, .rc-tooltip-placement-bottomLeft .rc-tooltip-arrow, .rc-tooltip-placement-bottomRight .rc-tooltip-arrow {
 
+.rc-tooltip-placement-bottom .rc-tooltip-arrow,
+.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow,
+.rc-tooltip-placement-bottomRight .rc-tooltip-arrow {
     border-bottom-color: lighten(desaturate(colors.$teal, 10%), 30%);
 }

@@ -4,44 +4,44 @@
 
 .section-skills {
     @include mixins.section;
-    
+
     &__slide {
+        align-items: flex-start;
+        column-gap: 4rem;
         display: grid;
+        flex-wrap: wrap;
         grid-template-columns: repeat(2, 1fr);
         row-gap: 4rem;
-        column-gap: 4rem;
-        align-items: flex-start;
-        flex-wrap: wrap;
 
         @media screen and (max-width: breakpoints.$md) {
             grid-template-columns: unset;
-
             grid-template-rows: repeat(4, 1fr);
         }
     }
 
     .skill {
         &-item {
-            margin: 0 auto;
             border-radius: 1.5rem;
-            padding: 2rem 3rem;
-            box-sizing: border-box;
             box-shadow: 0 0.2rem 1rem rgba(colors.$primary, 10%);
+            box-sizing: border-box;
+            column-gap: 2rem;
             display: grid;
             grid-template-columns: 6rem 1fr;
-            column-gap: 2rem;
+            margin: 0 auto;
+            padding: 2rem 3rem;
 
             @media screen and (max-width: breakpoints.$md) {
                 grid-template-columns: 4rem 1fr;
             }
-            
+
             &__logo {
                 width: 100%;
             }
+
             &__name {
-                margin: 0;
                 font-size: 2rem;
                 font-weight: 600;
+                margin: 0;
             }
         }
     }

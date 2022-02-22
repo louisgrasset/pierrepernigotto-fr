@@ -1,5 +1,6 @@
-import { Header, Profile } from '../../components';
-import './Contact.scss';
+import "./Contact.scss";
+
+import { Header, Profile } from "../../components";
 
 export function Contact () {
     return (
@@ -37,5 +38,5 @@ export function Contact () {
                 </form>
             </div>
         </section>
-    )
+    );
 }

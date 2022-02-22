@@ -1,12 +1,13 @@
 import "./Studies.scss";
 import "keen-slider/keen-slider.min.css";
 
-import { Arrow, Header, Slider } from "../../components";
-import { useKeenSlider } from "keen-slider/react"
+import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
-import { Study } from "../../types";
+
+import { Header, Slider } from "../../components";
 import { cesi, fivescryo } from "../../data";
-import { getPeriodDuration } from '../../utils/date';
+import { Study } from "../../types";
+import { getPeriodDuration } from "../../utils/date";
 
 interface StudyItemProps {
     study: Study
@@ -31,25 +32,25 @@ export function StudyItem ({ study }: StudyItemProps) {
                 <span className="study__tag">{study.tag}</span>
             </div>
             <footer className="study__footer">
-                <span>{study.start.toLocaleString("fr-fr", {year: "numeric", month:"long"})} à {study.end.toLocaleString("fr-fr", {year: "numeric", month:"long"})}</span>
+                <span>{study.start.toLocaleString("fr-fr", { year: "numeric", month:"long" })} à {study.end.toLocaleString("fr-fr", { year: "numeric", month:"long" })}</span>
                 <span>{getPeriodDuration(study.start, study.end)}</span>
             </footer>
         </div>
-    )
+    );
 }
 
 export function Studies () {
-    const [currentSlide, setCurrentSlide] = useState(0)
-    const [loaded, setLoaded] = useState(false)
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [loaded, setLoaded] = useState(false);
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-      initial: 0,
-      slideChanged(slider) {
-        setCurrentSlide(slider.track.details.rel)
-      },
-      created() {
-        setLoaded(true)
-      },
-    })
+        initial: 0,
+        slideChanged(slider) {
+            setCurrentSlide(slider.track.details.rel);
+        },
+        created() {
+            setLoaded(true);
+        },
+    });
 
     const studies : [Study, Study][] = [
         [
@@ -125,7 +126,7 @@ export function Studies () {
                 end: new Date(2020, 6)
             },
         ]
-    ] 
+    ];
 
     return (
         <section className="section-studies" id="formation">
@@ -134,12 +135,12 @@ export function Studies () {
                 {
                     studies.map((studyPair, studyPairIndex) => (
                         <div key={studyPairIndex} className="section-studies__slide keen-slider__slide">
-                                <StudyItem study={studyPair[0]}/>
-                                <StudyItem study={studyPair[1]}/>
+                            <StudyItem study={studyPair[0]}/>
+                            <StudyItem study={studyPair[1]}/>
                         </div>
-                        ))
+                    ))
                 }
             </Slider>
         </section>
-    )
+    );
 }
