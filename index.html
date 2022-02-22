@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
-    <link rel="icon" href="/images/favicon.webp" type="image/webp">
-    <title>Pierre Pernigotto</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+        <link rel="icon" href="/images/favicon.webp" type="image/webp">
+        <title>Pierre Pernigotto</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <form name="contact" netlify netlify-honeypot="bot-field" style="display: none;">
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
+            <input required type="text" placeholder=" " name="firstname" id="firstname" />
+            <input required type="text" placeholder=" " name="lastname" id="lastname" />
+            <input required type="email" placeholder=" " name="email" id="email" />
+            <input required type="text" placeholder=" " name="object" id="object" />
+            <textarea required placeholder=" " name="message" id="message"></textarea>
+        </form>
+        <script type="module" src="/src/main.tsx"></script>
+    </body>
 </html>
