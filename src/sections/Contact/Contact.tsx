@@ -37,6 +37,9 @@ export function Contact () {
                     </div>
                 </form>
             </div>
+            <p className="attribution">
+            &copy; { new Date().getFullYear()} Pierre Pernigotto.<a href="https://louisgrasset.fr">Desgin &amp; développement par Louis Grasset</a>
+            </p>
         </section>
     );
 }
