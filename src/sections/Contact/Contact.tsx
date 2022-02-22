@@ -8,7 +8,7 @@ export function Contact () {
             <div className="section-contact__wrapper">
                 <Header content="Contact" detail="Envoyez-moi un message ici."/>
                 <Profile />
-                <form className="section-contact__form" name="contact" action="/#success" method="POST" data-netlify="true">
+                <form name="contact" action="/#success" method="POST" data-netlify="true" className="section-contact__form">
                     <input type="hidden" name="form-name" value="contact" />
                     <div className='section-contact__form-group-item'>
                         <div className="section-contact__form-item">
