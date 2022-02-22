@@ -15,7 +15,7 @@ export function Profile () {
                     <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                         <use xlinkHref="#profile-image" transform="translate(0.12 0.154)scale(0.00075)"/>
                     </pattern>
-                    <image id="profile-image" xlinkHref="/images/profile.png"/>
+                    <image id="profile-image" xlinkHref="/images/profile.webp"/>
                 </defs>
             </svg>
         </div>
