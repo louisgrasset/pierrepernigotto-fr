@@ -7,6 +7,10 @@
 
     @include mixins.section;
 
+    &:not(:first-child) {
+        padding-top: 0;
+    }
+
     &__list {
         display: flex;
         justify-content: space-between;
