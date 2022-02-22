@@ -77,6 +77,13 @@
                         margin: 0 5rem;
                         padding: 2rem 0;
 
+                        a {
+                            &::after {
+                                color: colors.$secondary;
+                                content: '.';
+                            }
+                        }
+
                         &:hover::after {
                             display: none;
                         }
