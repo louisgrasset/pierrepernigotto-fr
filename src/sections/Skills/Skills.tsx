@@ -57,7 +57,6 @@ export function Skills () {
                 }
             }
         }
-        console.log(pagination);
         return pagination;
     },[skills]);
 
