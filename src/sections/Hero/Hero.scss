@@ -3,17 +3,90 @@
 @use '../../styles/breakpoints';
 
 .section-hero {
+    $hero: &;
+
     background-color: rgba(colors.$teal, 10%);
     padding-bottom: 5rem;
+
+
+    &__wrapper {
+        @include mixins.section;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+
+
+        .profile {
+            justify-self: flex-end;
+            max-width: 55rem;
+            @media screen and (max-width: breakpoints.$xl) {
+                max-width: 35rem;
+            }
+        }
+
+        @media screen and (max-width: 1100px) {
+            display: flex;
+            flex-direction: column-reverse;
+
+            .profile {
+                height: 25rem;
+                max-width: 25rem;
+            }
+            #{$hero} {
+                &__header {
+                    text-align: center;
+                }
+
+                &__subcontent,
+                &__actions{
+                    max-width: 70rem;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                &__actions {
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+        @media screen and (max-width: breakpoints.$md)  {
+            #{$hero} {
+                &__subcontent {
+                    text-align: center;
+                }
+                
+                &__actions {
+                    flex-direction: column-reverse;
+                    .button {
+                        text-align: center;
+                        width: 80%;
+                        margin: 1rem auto;
+                    }
+                }
+            }
+        }
+    }
 
     &__header {
         font-size: 10rem;
         margin-bottom: 4rem;
         line-height: 10rem;
-        
+        @media screen and (max-width: breakpoints.$xl) {
+            font-size: 8rem;
+            line-height: 8rem;
+        }
+        @media screen and (max-width: breakpoints.$lg) {
+            font-size: 6rem;
+            line-height: 6rem;
+        }
         span {
             color: colors.$secondary;
         }
+    }
+
+    &__second {
+        display: flex;
+        justify-content: center;
     }
 
     &__subcontent {
@@ -26,16 +99,6 @@
         margin: 4rem 0;
         button:not(:first-child) {
             margin-left: 2rem
-        }
-    }
-
-    &__wrapper {
-        @include mixins.section;
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-
-        .profile {
-            width: 55rem;
         }
     }
 }

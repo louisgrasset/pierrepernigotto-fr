@@ -1,12 +1,12 @@
-@use '../../styles/mixins';
+@use '../../styles/breakpoints';
 @use '../../styles/colors';
+@use '../../styles/mixins';
 
 .section-contact {
     background-color: colors.$primary;
     border-top: 1rem solid colors.$teal;
     position: relative;
     overflow-y: hidden;
-    margin-top: 10rem;
 
     &__wrapper {
         @include mixins.section;
@@ -15,6 +15,10 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        @media screen and (max-width: breakpoints.$md) {
+            flex-direction: column;
+        }
 
         .header {
             color: colors.$white;
@@ -29,10 +33,7 @@
         width: 60rem;
         left: -30rem;
         position: absolute;
-        top: -17rem;
-        svg {
-            height: 100%;
-        }
+        top: -12rem;
     }
 
     &__form {
@@ -40,6 +41,10 @@
         position: relative;
         z-index: 2;
         align-self: center;
+
+        @media screen and (max-width: breakpoints.$xl) {
+            justify-self: center;
+        }
         &-item {
             width: 100%;
             position: relative;

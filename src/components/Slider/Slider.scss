@@ -1,3 +1,4 @@
+@use '../../styles/breakpoints';
 @use '../../styles/colors';
 
 .slider {
@@ -27,6 +28,10 @@
         &__slide {
             padding: 4rem;
             box-sizing: border-box;
+            @media screen and (max-width: breakpoints.$md) {
+                padding: 1rem;
+            }
+    
         }
     }
 

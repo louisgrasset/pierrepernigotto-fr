@@ -1,5 +1,6 @@
-@use '../../styles/mixins';
+@use '../../styles/breakpoints';
 @use '../../styles/colors';
+@use '../../styles/mixins';
 
 .section-studies {
     @include mixins.section;
@@ -9,8 +10,11 @@
             cursor:grab;
             box-sizing: border-box;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-evenly;
             align-items: flex-start;
+            row-gap: 5rem;
+            column-gap: 5rem;
             &:active  {
                 cursor: grabbing;
             }
@@ -21,10 +25,18 @@
         $study: '.study';
 
         position: relative;
-        height: 100%;
-        flex-basis: calc(50% - 10rem);
         border-radius: 1.5rem;
         box-shadow: 0 .2rem 1rem rgba(colors.$primary, 0.1);
+        @media screen and (min-width: breakpoints.$lg) {
+            min-width: 40rem;
+            flex-basis: calc(50% - 10rem);
+        }
+        @media screen and (max-width: breakpoints.$lg) {
+            flex-basis: calc(100% - 5rem);
+        }
+        @media screen and (max-width: breakpoints.$md) {
+            flex-basis: 100%;
+        }
 
         &__wrapper {
             padding: 3rem;

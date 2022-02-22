@@ -1,66 +1,80 @@
 import "./Navigation.scss";
 import { Link as Link } from "react-scroll";
+import { useState } from 'react';
 
 export function Navigation () {
+    const [toggle, setToggle] = useState(false);
+
     return (
-        <nav className="navigation">
-            <a className="navigation-logo" href="./">PierrePernigotto<span>.fr</span></a>
-            <ul className="navigation-list">
-                <li className="navigation-list__item">
-                    <Link
-                        to="experiences"
-                        smooth={true}
-                        duration={500}
-                        offset={- 50}>
-                        Experiences Professionnelles
-                    </Link>
-                </li>
-                <li className="navigation-list__item">
-                    <Link
-                        to="formation"
-                        smooth={true}
-                        duration={500}
-                        offset={- 50}>
-                        Formation &amp; Alternance
-                    </Link>
-                </li>
-                <li className="navigation-list__item">
-                    <Link
-                        to="competences"
-                        smooth={true}
-                        duration={500}
-                        offset={- 50}>
-                        Compétences
-                    </Link>
-                </li>
-                <li className="navigation-list__item">
-                    <Link
-                        to="projets"
-                        smooth={true}
-                        duration={500}
-                        offset={- 50}>
-                        Projets
-                    </Link>
-                </li>
-                <li className="navigation-list__item">
-                    <Link
-                        to="entrepreunariat"
-                        smooth={true}
-                        duration={500}
-                        offset={- 50}>
-                        Entrepreunariat
-                    </Link>
-                </li>
-                <li className="navigation-list__item">
-                    <Link
-                        to="contact"
-                        smooth={true}
-                        duration={500}
-                        offset={- 50}>
-                        Contact
-                    </Link>
-                </li>
-            </ul>
+        <nav className={"navigation" + (toggle ? " navigation--active" : "")}>
+            <a className="navigation__logo" href="./">PierrePernigotto<span>.fr</span></a>
+            <button className="navigation__toggle" onClick={()=> setToggle(!toggle)}>
+                {toggle ? "Fermer" : "Menu" }
+            </button>
+            <div className="navigation__wrapper">
+                <ul className="navigation__list">
+                    <li className="navigation__list-item">
+                        <Link
+                            onClick={()=> setToggle(false)}
+                            to="experiences"
+                            smooth={true}
+                            duration={500}
+                            offset={- 50}>
+                            Experiences Professionnelles
+                        </Link>
+                    </li>
+                    <li className="navigation__list-item">
+                        <Link
+                            onClick={()=> setToggle(false)}
+                            to="formation"
+                            smooth={true}
+                            duration={500}
+                            offset={- 50}>
+                            Formation &amp; Alternance
+                        </Link>
+                    </li>
+                    <li className="navigation__list-item">
+                        <Link
+                            onClick={()=> setToggle(false)}
+                            to="competences"
+                            smooth={true}
+                            duration={500}
+                            offset={- 50}>
+                            Compétences
+                        </Link>
+                    </li>
+                    <li className="navigation__list-item">
+                        <Link
+                            onClick={()=> setToggle(false)}
+                            to="projets"
+                            smooth={true}
+                            duration={500}
+                            offset={- 50}>
+                            Projets
+                        </Link>
+                    </li>
+                    <li className="navigation__list-item">
+                        <Link
+                            onClick={()=> setToggle(false)}
+                            to="entrepreunariat"
+                            smooth={true}
+                            duration={500}
+                            offset={- 50}>
+                            Entrepreunariat
+                        </Link>
+                    </li>
+                    <li className="navigation__list-item">
+                        <Link
+                            onClick={()=> setToggle(false)}
+                            to="contact"
+                            smooth={true}
+                            duration={500}
+                            offset={- 50}>
+                            Contact
+                        </Link>
+                    </li>
+                </ul>
+            </div>
         </nav>
     )
 }
