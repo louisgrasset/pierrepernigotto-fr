@@ -9,6 +9,10 @@
     font-size: 2rem;
     padding-bottom: 5rem;
 
+    @media screen and (max-width: 1100px) {
+        text-align: center;
+    }
+
     &__wrapper {
         @include mixins.section;
 
@@ -29,10 +33,6 @@
             flex-direction: column-reverse;
 
             #{$hero} {
-                &__header {
-                    text-align: center;
-                }
-
                 &__subcontent,
                 &__actions {
                     margin-left: auto;
@@ -49,16 +49,11 @@
 
         @media screen and (max-width: breakpoints.$md) {
             #{$hero} {
-                &__subcontent {
-                    text-align: center;
-                }
-
                 &__actions {
                     flex-direction: column-reverse;
 
                     .button {
                         margin: 1rem auto;
-                        text-align: center;
                         width: 80%;
                     }
                 }
