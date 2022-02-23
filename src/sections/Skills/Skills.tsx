@@ -38,9 +38,9 @@ export function Skills () {
                             {
                                 slide.map(skill => (
                                     <div key={skill.id} className="skill-item">
-                                        <img width="60" height="auto" className="skill-item__logo" src={`/images/skills/${skill.id}.webp`} alt={skill.name} />
+                                        <img width="60" height="60" className="skill-item__logo" src={`/images/skills/${skill.id}.webp`} alt={skill.name} />
                                         <div>
-                                            <h5 className="skill-item__name">{skill.name}</h5>
+                                            <h4 className="skill-item__name">{skill.name}</h4>
                                             <p className="skill-item__detail">{skill.detail}</p>
                                         </div>
                                     </div>

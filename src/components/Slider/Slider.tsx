@@ -47,6 +47,7 @@ export function Slider ({ children }: PropsWithChildren<any>) {
                     ].map((idx) => {
                         return (
                             <button
+                                aria-label={`Diapositive numéro ${idx}`}
                                 key={idx}
                                 onClick={() => {
                                     instanceRef.current?.moveToIdx(idx);
