@@ -97,7 +97,7 @@ export function Experiences () {
         data.map(({ company, positions }) =>
             <div className="experience" key={company.id}>
                 <div className="experience__company">
-                    <img className="experience__company-logo" src={`/images/companies/${company.id}.svg`} alt={company.name} />
+                    <img height="60" width="60" className="experience__company-logo" src={`/images/companies/${company.id}.svg`} alt={company.name} />
                     <div>
                         <h4 className="experience__company-name">{company.name}</h4>
                         <p className="experience__company-location">{company.location} - {getExperienceDuration(positions[positions.length - 1], positions[0])}</p>

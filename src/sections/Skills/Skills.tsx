@@ -26,7 +26,7 @@ export function Skills () {
             }
         }
         return pagination;
-    },[skills]);
+    },[]);
 
     return (
         <section className="section-skills" id="competences">
@@ -38,7 +38,7 @@ export function Skills () {
                             {
                                 slide.map(skill => (
                                     <div key={skill.id} className="skill-item">
-                                        <img className="skill-item__logo" src={`/images/skills/${skill.id}.svg`} alt={skill.name} />
+                                        <img  height="60" className="skill-item__logo" src={`/images/skills/${skill.id}.webp`} alt={skill.name} />
                                         <div>
                                             <h5 className="skill-item__name">{skill.name}</h5>
                                             <p className="skill-item__detail">{skill.detail}</p>

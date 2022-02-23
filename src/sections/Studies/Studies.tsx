@@ -18,7 +18,7 @@ export function StudyItem ({ study }: StudyItemProps) {
         <div className="study">
             <div className="study__wrapper">
                 <header className="study__header">
-                    <img src={`/images/companies/${study.company.id}.svg`} alt={study.company.name} />
+                    <img height="40" src={`/images/companies/${study.company.id}.svg`} alt={study.company.name} />
                     <h4>{study.company.name} <span>({study.company.location})</span></h4>
                 </header>
                 <h5 className="study__label">

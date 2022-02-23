@@ -41,7 +41,7 @@ export function Hero () {
                     </div>
                     <p className="section-hero__socials">N'hésitez pas à m'ajouter sur
                         <a href="https://www.linkedin.com/in/pierre-pernigotto-aa387b181/" target="_blank">
-                            <svg width="15" height="15" viewBox="0 0 76 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="20" height="20" viewBox="0 0 76 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_67_2)">
                                     <path d="M0 5.46C0.0210819 3.99416 0.622303 2.59644 1.67195 1.57303C2.7216 0.549619 4.1341 -0.016029 5.6 -2.86527e-07H70.17C71.6359 -0.016029 73.0484 0.549619 74.098 1.57303C75.1477 2.59644 75.7489 3.99416 75.77 5.46V70.79C75.7489 72.2558 75.1477 73.6536 74.098 74.677C73.0484 75.7004 71.6359 76.266 70.17 76.25H5.6C4.1341 76.266 2.7216 75.7004 1.67195 74.677C0.622303 73.6536 0.0210819 72.2558 0 70.79L0 5.46Z" fill="currentColor"/>
                                     <path fillRule="evenodd" clipRule="evenodd" d="M23 63.83V29.4H11.52V63.83H23ZM17.25 24.7C21.25 24.7 23.72 22.05 23.72 18.75C23.72 15.45 21.24 12.8 17.32 12.8C13.4 12.8 10.85 15.37 10.85 18.75C10.85 22.13 13.33 24.7 17.17 24.7H17.25Z" fill="white"/>
