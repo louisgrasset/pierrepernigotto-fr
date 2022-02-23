@@ -6,6 +6,7 @@
     $hero: &;
 
     background-color: rgba(colors.$teal, 10%);
+    font-size: 2rem;
     padding-bottom: 5rem;
 
     &__wrapper {
@@ -27,10 +28,6 @@
             display: flex;
             flex-direction: column-reverse;
 
-            .profile {
-                height: 25rem;
-                max-width: 25rem;
-            }
             #{$hero} {
                 &__header {
                     text-align: center;
@@ -84,14 +81,44 @@
             line-height: 6rem;
         }
 
+        @media screen and (max-width: breakpoints.$md) {
+            margin-top: 2rem;
+        }
+
+        @media screen and (max-width: breakpoints.$xs) {
+            font-size: 4.5rem;
+            line-height: 4.5rem;
+        }
+
         span {
             color: colors.$secondary;
         }
     }
 
+    &__socials {
+        svg {
+            height: 1.5rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            position: relative;
+            top: 0.2rem;
+            width: 1.5rem;
+        }
+    }
+
+    &__first {
+        margin: 0 auto;
+        max-width: 60rem;
+    }
+
     &__second {
         display: flex;
         justify-content: center;
+
+        @media screen and (max-width: 1100px) {
+            height: 25vh;
+            margin-top: -5vh;
+        }
     }
 
     &__subcontent {

@@ -12,6 +12,11 @@
     justify-content: space-between;
     padding: 4rem 0;
 
+    @media screen and (max-width: breakpoints.$md) {
+        padding-bottom: 1rem;
+        padding-top: 2rem;
+    }
+
     &__logo {
         font-weight: 600;
 
@@ -49,6 +54,16 @@
             top: 0;
             width: 100%;
             z-index: 99;
+
+            &::after {
+                background-color: rgba(colors.$primary, 0.7);
+                content: '';
+                height: 100vh;
+                position: absolute;
+                top: -100vh;
+                width: 100%;
+                z-index: 2;
+            }
 
             #{$nav} {
                 box-sizing: border-box;
@@ -108,14 +123,14 @@
         #{$nav} {
             &__toggle {
                 appearance: none;
-                background-color: rgba(colors.$teal, 60%);
+                background-color: colors.$secondary;
                 border: 0;
                 bottom: 0;
-                color: colors.$primary;
+                color: colors.$white;
                 font-size: 2rem;
                 font-weight: 700;
                 left: 0;
-                padding: 0.7rem;
+                padding: 1.5rem;
                 position: fixed;
                 text-transform: uppercase;
                 width: 100%;
@@ -124,7 +139,20 @@
 
             &__wrapper {
                 @media screen and (max-width: breakpoints.$xl) {
+                    animation: navigation 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
                     display: block;
+
+                    @keyframes navigation {
+                        from {
+                            opacity: 0;
+                            transform: translateY(100vh);
+                        }
+
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
                 }
             }
         }

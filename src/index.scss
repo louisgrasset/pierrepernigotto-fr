@@ -1,4 +1,5 @@
 @use './styles/colors';
+@use './styles/mixins';
 
 @import './styles/fonts';
 @import './styles/buttons';
@@ -42,8 +43,8 @@ body {
 }
 
 .attribution {
+    @include mixins.section;
+
     color: colors.$teal;
     font-size: 1.4rem;
-    text-align: center;
-    text-align: center;
 }

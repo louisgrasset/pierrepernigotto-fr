@@ -3,7 +3,7 @@
 .rc-tooltip {
     background-color: lighten(desaturate(colors.$teal, 10%), 30%);
     border-radius: 0.3rem;
-    max-width: 25rem;
+    max-width: 30rem;
     opacity: 1;
 
     &-inner {
@@ -13,6 +13,22 @@
         font-size: 1.6rem;
         font-weight: 500;
         padding: 1rem 1.6rem;
+    }
+
+    &-content {
+        animation: rc-tooltip 0.2s ease-out forwards;
+
+        @keyframes rc-tooltip {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     }
 }
 
