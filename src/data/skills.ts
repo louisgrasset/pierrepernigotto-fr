@@ -2,8 +2,8 @@ import { Skill } from "../types";
 
 export const skills: Skill[] = [
     {
-        name: "mRemote",
-        id: "mremote",
+        name: "mRemote NG",
+        id: "mremoteng",
         detail: "Gestionnaire de connexion à distance"
     },
     {
@@ -33,7 +33,7 @@ export const skills: Skill[] = [
     },
     {
         name: "Veeam Backup & Replication",
-        id: "veeambackup",
+        id: "veeam",
         detail: "Solution de sauvegarde"
     },
     {
