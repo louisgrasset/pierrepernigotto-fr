@@ -8,7 +8,7 @@ export function Navigation () {
 
     return (
         <nav className={"navigation" + (toggle ? " navigation--active" : "")}>
-            <a className="navigation__logo" href="./">PierrePernigotto<span>.fr</span></a>
+            <a className="navigation__logo" href="./">Pierre.Pernigotto<span>.fr</span></a>
             <button className="navigation__toggle" onClick={()=> setToggle(! toggle)}>
                 {toggle ? "Fermer" : "Menu" }
             </button>
