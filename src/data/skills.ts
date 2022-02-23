@@ -110,5 +110,10 @@ export const skills: Skill[] = [
         name: "Nuxeo",
         id: "nuxeo",
         detail: "Gestion Electronique de Documents (GED)"
+    },
+    {
+        name: "Keepass XC",
+        id: "keepassxc",
+        detail: "Gestionnaire de mots de passe"
     }
 ];
