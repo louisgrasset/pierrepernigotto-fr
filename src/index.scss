@@ -40,6 +40,10 @@ body {
         color: inherit;
         text-decoration: none;
     }
+
+    &.frozen {
+        overflow: hidden;
+    }
 }
 
 .attribution {

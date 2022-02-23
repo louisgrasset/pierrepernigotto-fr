@@ -1,10 +1,17 @@
 import "./Navigation.scss";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link as Link } from "react-scroll";
 
 export function Navigation () {
     const [toggle, setToggle] = useState(false);
+
+    useEffect(()=> {
+        toggle ?
+            document.querySelector("body")?.classList.add("frozen")
+            :
+            document.querySelector("body")?.classList.remove("frozen");
+    }, [toggle]);
 
     return (
         <nav className={"navigation" + (toggle ? " navigation--active" : "")}>
