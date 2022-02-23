@@ -4,12 +4,11 @@ import { useMemo } from "react";
 import CountUp from "react-countup";
 
 import { Information } from "../../components";
+import { skills } from "../../data";
 
 export function Statistics () {
     const experience = useMemo(() => new Date().getFullYear() - 2018, []);
-    const hardskills = [
-        "mRemote", "VMware Workstation", "Acronis Snap Deploy", "Gantt Project", "VMware ESXI", "Microsoft Projet", "Veeam Backup & Replication", "Proxmox", "Rainbow", "M-Files", "LockSelf", "Airwatch", "Kubernetes", "Veeam One", "SAP", "Esker", "Cleemy", "Symantec", "Sentinel One", "Uniflow", "OOdrive", "Nuxeo"
-    ];
+    const hardskills = useMemo(()=> skills.map(skill => skill.name), []);
     const softskills = [
         "Proactif", "Organisé", "Polyvalent", "Autodidacte", "Passionné", "Attentif"
     ];
