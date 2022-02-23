@@ -58,7 +58,7 @@ export const skills: Skill[] = [
     },
     {
         name: "Airwatch",
-        id: "lockself",
+        id: "airwatch",
         detail: "Mobile Device Management"
     },
     {
