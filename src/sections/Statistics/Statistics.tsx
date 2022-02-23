@@ -8,7 +8,7 @@ import { Information } from "../../components";
 export function Statistics () {
     const experience = useMemo(() => new Date().getFullYear() - 2018, []);
     const hardskills = [
-        "mRemote", "VMware", "ESXI", "Gantt Project", "VMware ESXI", "Gantt Project", "Veeam", "Gantt Project", "Veeam"
+        "mRemote", "VMware Workstation", "Acronis Snap Deploy", "Gantt Project", "VMware ESXI", "Microsoft Projet", "Veeam Backup & Replication", "Proxmox", "Rainbow", "M-Files", "LockSelf", "Airwatch", "Kubernetes", "Veeam One", "SAP", "Esker", "Cleemy", "Symantec", "Sentinel One", "Uniflow", "OOdrive", "Nuxeo"
     ];
     const softskills = [
         "Proactif", "Organisé", "Polyvalent", "Autodidacte", "Passionné", "Attentif"

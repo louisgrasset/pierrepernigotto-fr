@@ -14,8 +14,7 @@ export function Hero () {
                         Pierre<br />Pernigotto<span>.</span>
                     </h1>
                     <h2 className='section-hero__subcontent'>
-                    Actuellement Chargé de mission IT chez <a href="https://www.fivesgroup.com/fr/energy-cryogenics" target="_blank" rel="noreferrer">Fives Cryo</a>, je suis prêt à entamer le prochain chapitre de ma carrière professionnelle.<br /><br />
-                    "Cookie : Anciennement petit gâteau sucré, qu'on acceptait avec plaisir. Aujourd'hui : petit fichier informatique drôlement salé, qu'il faut refuser avec véhémence." - Luc Fayard
+                    Actuellement Chargé de missions IT chez <a href="https://www.fivesgroup.com/fr/energy-cryogenics" target="_blank" rel="noreferrer">Fives Cryo</a>, je suis prêt à entamer le prochain chapitre de ma carrière professionnelle.<br /><br />
                     </h2>
                     <div className="section-hero__actions">
                         <Link

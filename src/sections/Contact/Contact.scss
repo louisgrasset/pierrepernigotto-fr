@@ -44,7 +44,7 @@
         position: relative;
         z-index: 2;
 
-        @media screen and (max-width: breakpoints.$xl) {
+        @media screen and (max-width: breakpoints.$xxl) {
             justify-self: center;
         }
 

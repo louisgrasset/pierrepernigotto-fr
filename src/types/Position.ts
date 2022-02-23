@@ -2,6 +2,6 @@ export type Position = {
     label: string,
     start: Date,
     end?: Date,
-    detail: string
+    details: string[],
     tags: string[],
 }
