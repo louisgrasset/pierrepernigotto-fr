@@ -88,9 +88,12 @@
                 }
 
                 &__header {
+                    background: colors.$white;
                     font-size: 2rem;
                     font-weight: 600;
                     margin: 0;
+                    position: sticky;
+                    top: 0;
                 }
             }
         }
