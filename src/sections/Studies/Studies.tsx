@@ -16,7 +16,9 @@ export function StudyItem ({ study }: StudyItemProps) {
             <div className="study__wrapper">
                 <header className="study__header">
                     <img width="40" height="40" src={`/images/companies/${study.company.id}.svg`} alt={study.company.name} />
-                    <h4>{study.company.name} <span>({study.company.location})</span></h4>
+                    <h4>{study.company.name} <span>({study.company.location})</span>
+                        <span className="study__tag">{study.tag}</span>
+                    </h4>
                 </header>
                 <h5 className="study__label">
                     {study.label}
@@ -26,7 +28,6 @@ export function StudyItem ({ study }: StudyItemProps) {
                         <li key={index}>{detail}</li>
                     ))}
                 </ul>
-                <span className="study__tag">{study.tag}</span>
             </div>
             <footer className="study__footer">
                 <span>{study.start.toLocaleString("fr-fr", { year: "numeric", month:"long" })} à {study.end.toLocaleString("fr-fr", { year: "numeric", month:"long" })}</span>
