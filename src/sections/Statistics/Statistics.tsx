@@ -5,8 +5,10 @@ import CountUp from "react-countup";
 
 import { Information } from "../../components";
 import { skills } from "../../data";
+import { bacPlus2Projects, bacPlus3Projects, bacPlus5Projects, endOfStudyProjects } from "../../data/portfolio";
 
 export function Statistics () {
+    const projectsCount = useMemo(()=> bacPlus2Projects.length + bacPlus3Projects.length + bacPlus5Projects.length + endOfStudyProjects.length, []);
     const experience = useMemo(() => new Date().getFullYear() - 2018, []);
     const hardskills = useMemo(()=> skills.map(skill => skill.name), []);
     const softskills = [
@@ -24,7 +26,7 @@ export function Statistics () {
                 </li>
                 <li className="section-statistics__list-item">
                     <span className="section-statistics__list-item__count">
-                        +<CountUp end={15} duration={1} />
+                        +<CountUp end={projectsCount} duration={1} />
                     </span>
                     Projets réalisés
                 </li>
