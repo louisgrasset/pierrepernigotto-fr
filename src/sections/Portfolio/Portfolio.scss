@@ -1,0 +1,46 @@
+@use '../../styles/mixins';
+@use '../../styles/colors';
+
+.section-portfolio {
+    background-color: colors.$teal;
+
+    &__wrapper {
+        @include mixins.section;
+    }
+
+    &__slide {
+        color: colors.$white;
+    }
+
+    .header {
+        color: colors.$white;
+    }
+
+    .slider {
+        .keen-slider {
+            &::before {
+                background: linear-gradient(-90deg, rgba(colors.$teal, 0) 0%, colors.$teal 100%);
+            }
+
+            &::after {
+                background: linear-gradient(-90deg, colors.$teal 0%, rgba(colors.$teal, 0) 100%);
+            }
+        }
+
+        .arrow {
+            fill: colors.$white;
+
+            &--disabled {
+                fill: rgba(colors.$white, 0.3);
+            }
+        }
+
+        &__dot {
+            background-color: rgba(colors.$white, 0.25);
+
+            &.active {
+                background-color: colors.$white;
+            }
+        }
+    }
+}

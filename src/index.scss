@@ -6,7 +6,7 @@
 @import './styles/rc';
 
 html {
-    background-color: colors.$primary;
+    background-color: rgba(colors.$teal, 10%);
     font-size: 62.5%;
 }
 
@@ -16,6 +16,8 @@ html {
 }
 
 body {
+    @include mixins.scrollbar;
+
     background-color: colors.$white;
     color: colors.$primary;
     font-family:

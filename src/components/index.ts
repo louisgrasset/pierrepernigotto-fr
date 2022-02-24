@@ -3,4 +3,5 @@ export * from "./Header";
 export * from "./Information";
 export * from "./Navigation";
 export * from "./Profile";
+export * from "./ProjectItem";
 export * from "./Slider";

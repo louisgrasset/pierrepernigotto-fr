@@ -5,7 +5,11 @@ import { PropsWithChildren,useState } from "react";
 
 import { Arrow } from "../Arrow";
 
-export function Slider ({ children }: PropsWithChildren<any>) {
+interface SliderProps extends PropsWithChildren<any> {
+    withBreakpoints?: boolean;
+}
+
+export function Slider ({ withBreakpoints = false, children }: SliderProps) {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [loaded, setLoaded] = useState(false);
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -16,6 +20,17 @@ export function Slider ({ children }: PropsWithChildren<any>) {
         created() {
             setLoaded(true);
         },
+        breakpoints: withBreakpoints ? (
+            {
+                "(min-width: 768px)": {
+                    slides: { perView: 2, spacing: 5 },
+                },
+                "(min-width: 1380px)": {
+                    slides: { perView: 3, spacing: 10 },
+                },
+            }
+        ) : undefined,
+        slides: withBreakpoints ? ({ perView: 1 }) : undefined
     });
     return (
         <>

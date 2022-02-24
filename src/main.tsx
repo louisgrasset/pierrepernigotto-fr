@@ -4,7 +4,7 @@ import "./index.scss";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { Business, Contact,Experiences, Hero, Skills, Statistics, Studies } from "./sections";
+import { Business, Contact,Experiences, Hero, Portfolio, Skills, Statistics, Studies } from "./sections";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -13,6 +13,7 @@ ReactDOM.render(
         <Experiences />
         <Studies />
         <Skills />
+        <Portfolio/>
         <Business/>
         <Contact/>
     </React.StrictMode>,
