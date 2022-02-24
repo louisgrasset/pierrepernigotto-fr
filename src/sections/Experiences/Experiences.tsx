@@ -63,7 +63,7 @@ export function Experiences () {
                     label: "Technicien Informatique",
                     start: new Date(2020, 7),
                     end: new Date(2021, 8),
-                    details: ["Gestion de Parc", "Accompagnement Utilisateurs", "Gestion & achats des consommables IT \n  - Administration Serveurs (migration, gestion hyperviseur)", "Administration AD et Serveur de fichiers", "Formation Utilisateurs (Outils M365, Cybersécurité, Gestion de mdp...)"],
+                    details: ["Gestion de Parc", "Accompagnement Utilisateurs", "Gestion & achats des consommables IT - Administration Serveurs (migration, gestion hyperviseur)", "Administration AD et Serveur de fichiers", "Formation Utilisateurs (Outils M365, Cybersécurité, Gestion de mdp...)"],
                     tags: ["CDD"],
                 },
                 {
