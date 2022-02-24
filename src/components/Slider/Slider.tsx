@@ -1,15 +1,16 @@
 import "./Slider.scss";
 
 import { useKeenSlider } from "keen-slider/react";
-import { PropsWithChildren,useState } from "react";
+import { useState } from "react";
 
 import { Arrow } from "../Arrow";
 
-interface SliderProps extends PropsWithChildren<any> {
+interface SliderProps {
     withBreakpoints?: boolean;
+    slides: JSX.Element[]
 }
 
-export function Slider ({ withBreakpoints = false, children }: SliderProps) {
+export function Slider ({ withBreakpoints = false, slides }: SliderProps) {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [loaded, setLoaded] = useState(false);
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -30,14 +31,15 @@ export function Slider ({ withBreakpoints = false, children }: SliderProps) {
                 },
             }
         ) : undefined,
-        slides: withBreakpoints ? ({ perView: 1 }) : undefined
+        slides: withBreakpoints ? ({ perView: 1 }) : undefined,
+        renderMode: "performance"
     });
     return (
         <>
             <div className="slider">
                 <div ref={sliderRef} className="keen-slider">
                     {
-                        children
+                        slides
                     }
                 </div>
                 {loaded && instanceRef.current && (

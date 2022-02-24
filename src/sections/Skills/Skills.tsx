@@ -31,25 +31,23 @@ export function Skills () {
     return (
         <section className="section-skills" id="competences">
             <Header content="Compétences" />
-            <Slider>
-                {
-                    skillPagination.map((slide, slideIndex) => (
-                        <div key={slideIndex} className="section-skills__slide keen-slider__slide">
-                            {
-                                slide.map(skill => (
-                                    <div key={skill.id} className="skill-item">
-                                        <img width="60" height="60" className="skill-item__logo" src={`/images/skills/${skill.id}.webp`} alt={skill.name} />
-                                        <div>
-                                            <h4 className="skill-item__name">{skill.name}</h4>
-                                            <p className="skill-item__detail">{skill.detail}</p>
-                                        </div>
+            <Slider slides={
+                skillPagination.map((slide, slideIndex) => (
+                    <div key={slideIndex} className="section-skills__slide keen-slider__slide">
+                        {
+                            slide.map(skill => (
+                                <div key={skill.id} className="skill-item">
+                                    <img width="60" height="60" className="skill-item__logo" src={`/images/skills/${skill.id}.webp`} alt={skill.name} />
+                                    <div>
+                                        <h4 className="skill-item__name">{skill.name}</h4>
+                                        <p className="skill-item__detail">{skill.detail}</p>
                                     </div>
-                                ))
-                            }
-                        </div>
-                    ))
-                }
-            </Slider>
+                                </div>
+                            ))
+                        }
+                    </div>
+                ))
+            } />
         </section>
     );
 }

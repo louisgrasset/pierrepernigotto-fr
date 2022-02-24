@@ -41,16 +41,14 @@ export function Studies () {
     return (
         <section className="section-studies" id="formation">
             <Header content="Formation &amp; Alternance" />
-            <Slider>
-                {
-                    studies.map((studyPair, studyPairIndex) => (
-                        <div key={studyPairIndex} className="section-studies__slide keen-slider__slide">
-                            <StudyItem study={studyPair[0]}/>
-                            <StudyItem study={studyPair[1]}/>
-                        </div>
-                    ))
-                }
-            </Slider>
+            <Slider slides={
+                studies.map((studyPair, studyPairIndex) => (
+                    <div key={studyPairIndex} className="section-studies__slide keen-slider__slide">
+                        <StudyItem study={studyPair[0]}/>
+                        <StudyItem study={studyPair[1]}/>
+                    </div>
+                ))
+            } />
         </section>
     );
 }
