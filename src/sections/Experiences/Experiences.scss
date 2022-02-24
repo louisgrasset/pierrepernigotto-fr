@@ -1,9 +1,18 @@
-@use '../../styles/mixins';
+@use '../../styles/breakpoints';
 @use '../../styles/colors';
+@use '../../styles/mixins';
 @use 'sass:math';
 
 .section-experiences {
     @include mixins.section;
+
+    .header {
+        &-title {
+            @media screen and (max-width: breakpoints.$md) {
+                margin-top: unset;
+            }
+        }
+    }
 
     &__wrapper {
         column-gap: 12rem;
