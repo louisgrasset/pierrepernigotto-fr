@@ -21,14 +21,10 @@
 
         .profile {
             justify-self: flex-end;
-            max-width: 55rem;
+            max-width: 45rem;
 
             @media screen and (max-width: breakpoints.$xxl) {
                 max-width: 35rem;
-            }
-
-            @media screen and (max-width: breakpoints.$xl) {
-                max-width: 28rem;
             }
         }
 
@@ -41,6 +37,9 @@
             display: flex;
             flex-direction: column-reverse;
 
+            .profile {
+                max-width: 20rem;
+            }
             #{$hero} {
                 &__subcontent,
                 &__actions {
@@ -53,16 +52,13 @@
                     display: flex;
                     justify-content: space-evenly;
                 }
-
-                &__second {
-                    .profile svg {
-                        margin-top: unset;
-                    }
-                }
             }
         }
 
         @media screen and (max-width: breakpoints.$md) {
+            .profile {
+                max-width: 15rem;
+            }
             #{$hero} {
                 &__actions {
                     flex-direction: column-reverse;
@@ -134,7 +130,6 @@
 
         @media screen and (max-width: 1100px) {
             height: 25vh;
-            margin-top: -5vh;
         }
     }
 
