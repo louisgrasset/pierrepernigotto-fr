@@ -29,11 +29,12 @@
     }
 
     .profile {
+        height: 100%;
         left: -28rem;
         mix-blend-mode: exclusion;
         opacity: 0.4;
         position: absolute;
-        top: -6rem;
+        top: 0;
         width: 60rem;
     }
 
