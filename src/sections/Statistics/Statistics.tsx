@@ -38,7 +38,7 @@ export function Statistics () {
                 </li>
                 <li className='section-statistics__list-item section-statistics__list-item--separator' aria-hidden>/</li>
                 <li className="section-statistics__list-item">
-                    <span className="section-statistics__list-item__count">Softkills</span>
+                    <span className="section-statistics__list-item__count">Softskills</span>
                     + <CountUp end={softskills.length} duration={1} /> qualités
                     <Information content={ softskills.join(", ")+"..." }/>
                 </li>
