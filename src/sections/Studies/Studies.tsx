@@ -16,8 +16,8 @@ export function StudyItem ({ study }: StudyItemProps) {
             <div className="study__wrapper">
                 <header className="study__header">
                     <img width="40" height="40" src={`/images/companies/${study.company.id}.svg`} alt={study.company.name} />
-                    <h4>{study.company.name} <span>({study.company.location})</span>
-                        <span className="study__tag">{study.tag}</span>
+                    <h4>{study.company.name} <span style={{ color: study.company?.color }}>({study.company.location})</span>
+                        <span className="study__tag" style={{ backgroundColor: study.company?.color }}>{study.tag}</span>
                     </h4>
                 </header>
                 <h5 className="study__label">
@@ -29,7 +29,7 @@ export function StudyItem ({ study }: StudyItemProps) {
                     ))}
                 </ul>
             </div>
-            <footer className="study__footer">
+            <footer className="study__footer" style={{ backgroundColor: study.company?.color }}>
                 <span>{study.start.toLocaleString("fr-fr", { year: "numeric", month:"long" })} à {study.end.toLocaleString("fr-fr", { year: "numeric", month:"long" })}</span>
                 <span>{getPeriodDuration(study.start, study.end)}</span>
             </footer>

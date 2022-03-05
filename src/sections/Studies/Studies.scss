@@ -48,6 +48,30 @@
             padding: 3rem;
         }
 
+        &__footer {
+            border-bottom-left-radius: inherit;
+            border-bottom-right-radius: inherit;
+            bottom: 0;
+            color: colors.$white;
+            display: flex;
+            font-weight: 500;
+            justify-content: space-between;
+            left: 0;
+            padding: 0.8rem 1.6rem;
+            position: absolute;
+            right: 0;
+
+            span {
+                &::first-letter {
+                    text-transform: uppercase;
+                }
+
+                &:last-child {
+                    font-weight: 600;
+                }
+            }
+        }
+
         &__header {
             align-items: flex-start;
             column-gap: 2rem;
@@ -96,60 +120,6 @@
 
         &__tag {
             @include mixins.tag;
-        }
-
-        &__footer {
-            border-bottom-left-radius: inherit;
-            border-bottom-right-radius: inherit;
-            bottom: 0;
-            color: colors.$white;
-            display: flex;
-            font-weight: 500;
-            justify-content: space-between;
-            left: 0;
-            padding: 0.8rem 1.6rem;
-            position: absolute;
-            right: 0;
-
-            span::first-letter {
-                text-transform: uppercase;
-            }
-
-            span:last-child {
-                font-weight: 600;
-            }
-        }
-
-        &:first-child {
-            #{$study} {
-                &__header {
-                    h4 span:first-child {
-                        color: colors.$teal;
-                    }
-                }
-
-                &__footer {
-                    background-color: colors.$teal;
-                }
-            }
-        }
-
-        &:last-child {
-            #{$study} {
-                &__header {
-                    h4 span:first-child {
-                        color: colors.$secondary;
-                    }
-                }
-
-                &__footer {
-                    background-color: colors.$secondary;
-                }
-
-                &__tag {
-                    background-color: colors.$secondary;
-                }
-            }
         }
     }
 }

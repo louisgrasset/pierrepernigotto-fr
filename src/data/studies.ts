@@ -1,5 +1,5 @@
 import { Study } from "../types/Study";
-import { cesi, fivescryo } from "./companies";
+import { cesi, fivescryo, openclassroom } from "./companies";
 
 export const studies: Study[][] = [
     [
@@ -83,7 +83,7 @@ export const studies: Study[][] = [
             end: new Date(2022, 8)
         },
         {
-            company: cesi,
+            company: openclassroom,
             label: "Master 2 - Responsable en Sécurité des Systèmes d'Information",
             details: [
                 "Définir et mettre en œuvre la politique de sécurité",

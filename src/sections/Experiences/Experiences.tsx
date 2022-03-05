@@ -83,7 +83,7 @@ export function Experiences () {
                     start: new Date(2020, 0),
                     end: new Date(2022, 0),
                     details: ["Attribution de subvention après délibération en comité sur les dossiers présentés", "Participation à des actions de sensibilisations centrés sur la politique Jeunesse de la région"],
-                    tags: ["Bénévolat"],
+                    tags: ["Mission Publique"],
                 }
             ]
         }
