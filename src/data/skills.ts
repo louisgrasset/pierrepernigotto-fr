@@ -115,5 +115,65 @@ export const skills: Skill[] = [
         name: "Keepass XC",
         id: "keepassxc",
         detail: "Gestionnaire de mots de passe"
+    },
+    {
+        name: "Smoke Ping",
+        id: "smokeping",
+        detail: "Supervision réseau"
+    },
+    {
+        name: "Qualys",
+        id: "qualys",
+        detail: "Solution de sécurité des actifs IT"
+    },
+    {
+        name: "Neoscreen",
+        id: "neoscreen",
+        detail: "Logiciel d'affichage dynamique "
+    },
+    {
+        name: "Trello",
+        id: "trello",
+        detail: "Outil de gestion de projets"
+    },
+    {
+        name: "File Audit",
+        id: "fileaudit",
+        detail: "Stratégie d'audit de fichiers"
+    },
+    {
+        name: "ePDM",
+        id: "epdm",
+        detail: "GED Technique"
+    },
+    {
+        name: "Grafana",
+        id: "grafana",
+        detail: "Outil de visualisation de données"
+    },
+    {
+        name: "Power BI",
+        id: "powerbi",
+        detail: "Solution d'analyse de données"
+    },
+    {
+        name: "Zabbixi",
+        id: "zabbixi",
+        detail: "Supervision"
+    },
+    {
+        name: "Mind Manager",
+        id: "mindmanager",
+        detail: "Création de cartes heuristiques"
+    },
+    {
+        name: "Hyper V",
+        id: "hyperv",
+        detail: "Hyperviseur"
+    },
+    {
+        name: "RDS",
+        id: "rds",
+        detail: "Architecture centralisée permettant la connexion à un ordinateur distant"
     }
 ];
