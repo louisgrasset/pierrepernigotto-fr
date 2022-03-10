@@ -64,7 +64,7 @@ export function Navigation () {
                     <li className="navigation__list-item">
                         <Link
                             onClick={()=> setToggle(false)}
-                            to="entrepreunariat"
+                            to="business"
                             smooth={true}
                             duration={500}
                             offset={- 50}>
