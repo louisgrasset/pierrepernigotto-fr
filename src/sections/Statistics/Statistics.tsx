@@ -12,7 +12,7 @@ export function Statistics () {
     const experience = useMemo(() => new Date().getFullYear() - 2018, []);
     const hardskills = useMemo(()=> skills.map(skill => skill.name), []);
     const softskills = [
-        "Proactif", "Organisé", "Polyvalent", "Autodidacte", "Passionné", "Attentif"
+        "Proactif", "Organisé", "Polyvalent", "Autodidacte", "Passionné", "Attentif", "Autonome"
     ];
 
     return (
