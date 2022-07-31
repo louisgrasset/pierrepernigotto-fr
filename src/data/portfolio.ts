@@ -3,12 +3,28 @@ import { Project } from "../types";
 export const endOfStudyProjects: Project[] = [
     {
         id: "project1",
-        label: "Bientôt disponible...",
+        label: "Simulation d'une crise Informatique",
         institution: "Fives Cryo",
         details: [
             {
+                header: "",
+                items: ["J'ai été chargé par le responsable informatique d'organiser la simulation d'une attaque cyber en fonction des habitudes des utilisateurs. "]
+            },
+            {
+                header:"Les objectifs étaient multiples :",
+                items:["Tester les capacités de gestion de crise des membres du comité de direction"],
+            },
+            {
                 header:"",
-                items:["Le projet qui m'a été confié dans le cadre de mon master 2 est encore confidentiel."],
+                items:["Démontrer la nécessité d'investir dans la sécurité informatique"],
+            },
+            {
+                header:"",
+                items:["Démontrer ma connaissance de l'infrastructure et des habitudes des utilisateurs"],
+            },
+            {
+                header:"",
+                items:["Montrer mes capacités de gestion de projets"],
             }
         ],
         class: "Master 2",
