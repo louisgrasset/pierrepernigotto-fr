@@ -12,7 +12,7 @@ export function Portfolio () {
     ), []);
 
     return (
-        <section className="section-portfolio">
+        <section className="section-portfolio" id={"projets"}>
             <div className="section-portfolio__wrapper">
                 <Header content="Projets de fin d'études"/>
                 <Slider withBreakpoints slides={slidesForProject(endOfStudyProjects)} />
