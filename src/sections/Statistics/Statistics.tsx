@@ -4,8 +4,7 @@ import { useMemo } from "react";
 import CountUp from "react-countup";
 
 import { Information } from "../../components";
-import { skills } from "../../data";
-import { bacPlus2Projects, bacPlus3Projects, bacPlus5Projects, endOfStudyProjects } from "../../data/portfolio";
+import { bacPlus2Projects, bacPlus3Projects, bacPlus5Projects, endOfStudyProjects,skills } from "../../data";
 
 export function Statistics () {
     const projectsCount = useMemo(()=> bacPlus2Projects.length + bacPlus3Projects.length + bacPlus5Projects.length + endOfStudyProjects.length, []);
