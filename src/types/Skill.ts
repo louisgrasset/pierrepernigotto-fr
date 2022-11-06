@@ -1,5 +1,6 @@
 export type Skill = {
     name: string,
     id: string,
-    detail: string
+    detail: string,
+    tags: string[]
 }

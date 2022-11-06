@@ -1,53 +1,60 @@
 import "./Skills.scss";
 
-import { useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 
-import { Header, Slider } from "../../components";
+import { Header } from "../../components";
 import { skills } from "../../data";
 import { Skill } from "../../types";
 
 export function Skills () {
-    const skillPagination = useMemo(()=> {
-        const remainingSkills = Array.from(skills);
-        const pagination : Skill[][] = [[]];
-        let current = 0;
-        while (remainingSkills.length > 0) {
-            for (let index = 0; index < 4; index ++) {
-                const skill = remainingSkills.shift();
-                if (index === 0) {
-                    pagination[current] = [];
-                }
-                if (skill) {
-                    pagination[current].push(skill);
-                }
-                if (index === 3) {
-                    current += 1;
-                }
-            }
+    const filters = useMemo(()=> {
+        return [...new Set(skills.reduce((tags: string[], skill) => ([...tags, ...skill.tags]), []))];
+    }, []);
+    const [activeFilter, setActiveFilter] = useState<string | undefined>("cybersécurité");
+    const filteredSkills = useMemo(()=> {
+        if (! activeFilter) {
+            return skills;
         }
-        return pagination;
-    },[]);
+        return [...new Set(skills)].reduce((filtered: Skill[], skill) => {
+            return skill.tags.includes(activeFilter) ? [...filtered, skill] : filtered;
+        }, []);
+    }, [activeFilter]);
+
+    const onFilterClickHandler = useCallback((filter: string) => {
+        if (activeFilter === filter) {
+            setActiveFilter(undefined);
+        } else {
+            setActiveFilter(filter);
+        }
+    }, [activeFilter]);
 
     return (
         <section className="section-skills" id="competences">
             <Header content="Compétences" />
-            <Slider slides={
-                skillPagination.map((slide, slideIndex) => (
-                    <div key={slideIndex} className="section-skills__slide keen-slider__slide">
-                        {
-                            slide.map(skill => (
-                                <div key={skill.id} className="skill-item">
-                                    <img width="60" height="60" className="skill-item__logo" src={`/images/skills/${skill.id}.webp`} alt={skill.name} />
-                                    <div>
-                                        <h4 className="skill-item__name">{skill.name}</h4>
-                                        <p className="skill-item__detail">{skill.detail}</p>
-                                    </div>
+            <ul className="section-skills__filters">
+                {filters.map(filter => (
+                    <li key={filter} className={`section-skills__filters-item ${filter === activeFilter ? "is-enabled" : ( activeFilter ? "is-disabled" : "")}`}>
+                        <button onClick={() => onFilterClickHandler(filter)}>{filter}</button>
+                    </li>
+                ))}
+            </ul>
+            {
+                <div className="section-skills__slide keen-slider__slide">
+                    {
+                        filteredSkills.map(skill => (
+                            <div key={skill.id} className="skill-item">
+                                <div  className="skill-item__logo">
+                                    <img width="60" height="60" src={`/images/skills/${skill.id}.webp`} alt={skill.name} />
                                 </div>
-                            ))
-                        }
-                    </div>
-                ))
-            } />
+                                <div>
+                                    <h4 className="skill-item__name">{skill.name}</h4>
+                                    <p className="skill-item__detail">{skill.detail}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            }
         </section>
     );
 }

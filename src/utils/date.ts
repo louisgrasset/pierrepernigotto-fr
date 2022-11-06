@@ -5,7 +5,6 @@ export const getPeriodDuration = (start: Date, end: Date | undefined) => {
 
     let y ="";
     let m = "";
-    console.log(y);
     if (years > 1) {
         y = `${years} an${years > 1 ? "s" : ""}`;
         if (months >= 1) {

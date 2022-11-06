@@ -2,11 +2,12 @@ import "rc-tooltip/assets/bootstrap_white.css";
 import "./index.scss";
 
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
 import { Business, Contact,Experiences, Hero, Portfolio, Skills, Statistics, Studies } from "./sections";
-
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container as Element);
+root.render(
     <React.StrictMode>
         <Hero />
         <Statistics />
@@ -17,5 +18,4 @@ ReactDOM.render(
         <Business/>
         <Contact/>
     </React.StrictMode>,
-    document.getElementById("root")
 );

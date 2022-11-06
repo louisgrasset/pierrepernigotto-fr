@@ -47,8 +47,20 @@ export function Experiences () {
             company: fivescryo,
             positions: [
                 {
+                    label: "Ingénieur Systèmes, Réseau & Cybersécurité",
+                    start: new Date(2022, 10),
+                    details: [
+                        "Application des stratégies de sécurité (techniques et organisationnelles)",
+                        "Administration du SI Fives Cryo",
+                        "Mise en oeuvre de directives",
+                        "Missions IT diverses"
+                    ],
+                    tags: ["CDI"],
+                },
+                {
                     label: "Chargé de Missions IT",
                     start: new Date(2021, 9),
+                    end:  new Date(2022, 10),
                     details: ["Sensibilisation des Utilisateurs sur la cybersécurité", "Administration du SI Fives Cryo (voir plus bas pour les tâches d'administration)", "Mise en oeuvre de la politique SI groupe au sein de la société"],
                     tags: ["Apprentissage"],
                 },

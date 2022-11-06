@@ -15,7 +15,7 @@ export function Hero () {
                         Pierre<br />Pernigotto<span>.</span>
                     </h1>
                     <h2 className='section-hero__subcontent'>
-                    Actuellement Chargé de missions IT chez <a href="https://www.fivesgroup.com/fr/energy-cryogenics" target="_blank" rel="noreferrer">Fives Cryo</a>, je suis prêt à entamer le prochain chapitre de ma carrière professionnelle.
+                    Ingénieur Systèmes, Réseaux & Cybersécurité  chez <a href="https://www.fivesgroup.com/fr/energy-cryogenics" target="_blank" rel="noreferrer">Fives Cryo</a>.
                     </h2>
                     <div className="section-hero__actions">
                         <Link
