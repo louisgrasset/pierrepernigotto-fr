@@ -11,7 +11,7 @@ export const skills: Skill[] = [
         name: "VMware Workstation",
         id: "vmwareworkstation",
         detail: "Hyperviseur",
-        tags: ["hyperviseur"]
+        tags: ["infrastructure"]
     },
     {
         name: "Acronis Snap deploy",
@@ -29,7 +29,7 @@ export const skills: Skill[] = [
         name: "VMware ESXI",
         id: "vmwareesxi",
         detail: "Hyperviseur",
-        tags: ["hyperviseur"]
+        tags: ["infrastructure"]
     },
     {
         name: "Microsoft Projet",
@@ -47,7 +47,7 @@ export const skills: Skill[] = [
         name: "Proxmox",
         id: "proxmox",
         detail: "Hyperviseur Opensource",
-        tags: ["hyperviseur"]
+        tags: ["infrastructure"]
     },
     {
         name: "Rainbow",
@@ -209,7 +209,7 @@ export const skills: Skill[] = [
         name: "Hyper V",
         id: "hyperv",
         detail: "Hyperviseur",
-        tags: ["hyperviseur"]
+        tags: ["infrastructure"]
     },
     {
         name: "RDS",
