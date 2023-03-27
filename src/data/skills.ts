@@ -146,6 +146,12 @@ export const skills: Skill[] = [
         tags: ["analyse"]
     },
     {
+        name: "Ping Castle",
+        id: "ping-castle",
+        detail: "Outil d'audit AD",
+        tags: ["cybersécurité"]
+    },
+    {
         name: "Qualys",
         id: "qualys",
         detail: "Solution de sécurité des actifs IT",
