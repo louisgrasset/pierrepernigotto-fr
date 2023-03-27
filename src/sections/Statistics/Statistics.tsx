@@ -21,7 +21,7 @@ export function Statistics () {
                     <span className="section-statistics__list-item__count">
                         +<CountUp start={1} end={experience} duration={0.4}/>
                     </span>
-                    Années d'experiences
+                    Années d'experience
                 </li>
                 <li className="section-statistics__list-item">
                     <span className="section-statistics__list-item__count">
