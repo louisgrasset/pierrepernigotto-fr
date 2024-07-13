@@ -13,6 +13,7 @@
   justify-content: space-between;
   padding: 4rem 0;
 
+
   @media screen and (max-width: breakpoints.$md) {
     padding-bottom: 1rem;
     padding-top: 2rem;
@@ -180,7 +181,7 @@
       position: relative;
 
       &::after {
-        background-color: colors.$teal;
+        background-color: colors.$secondary;
         bottom: -3rem;
         content: '';
         height: 0.3rem;

@@ -51,8 +51,8 @@ export function Slider ({ withBreakpoints = false, slides }: SliderProps) {
                         />
 
                         <Arrow
-                            onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next() }
-                            disabled={ currentSlide === instanceRef.current.track.details.slides.length - 1}
+                            onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()}
+                            disabled={currentSlide === instanceRef.current.track.details.slides.length - 1}
                         />
                     </>
                 )}

@@ -22,7 +22,7 @@ export function Statistics() {
         [],
     );
     const experience = useMemo(() => new Date().getFullYear() - 2018, []);
-    const hardskills = useMemo(() => skills.map((skill) => skill.name), []);
+    const hardskills = useMemo(() => skills.filter(({ tags }) => tags.length === 1 ? ! tags.includes("soft skills"): true).map((skill) => skill.name), []);
     const softskills = [
         "Proactif",
         "Organisé",

@@ -16,10 +16,16 @@ export function Portfolio () {
             <div className="section-portfolio__wrapper">
                 <Header content="Projets de fin d'études"/>
                 <Slider withBreakpoints slides={slidesForProject(endOfStudyProjects)} />
+                <div className="slider__separator"/>
+
                 <Header content="Projets Bac+5"/>
                 <Slider withBreakpoints slides={slidesForProject(bacPlus5Projects)} />
+                <div className="slider__separator"/>
+
                 <Header content="Projets Bac+3"/>
                 <Slider withBreakpoints slides={slidesForProject(bacPlus3Projects)} />
+                <div className="slider__separator"/>
+
                 <Header content="Projets Bac+2"/>
                 <Slider withBreakpoints slides={slidesForProject(bacPlus2Projects)} />
             </div>

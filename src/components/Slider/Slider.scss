@@ -42,6 +42,14 @@
     padding: 10px 0;
   }
 
+  &__separator {
+    margin: 48px auto;
+    height: 4px;
+    width: 65%;
+    border-radius: 4px;
+    background: rgba(colors.$white, 50%);
+  }
+
   &__dot {
     background: rgba(colors.$teal, 25%);
     border: 0;
