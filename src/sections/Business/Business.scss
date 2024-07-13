@@ -2,9 +2,9 @@
 @use '../../styles/colors';
 
 .section-business {
-    @include mixins.section;
+  @include mixins.section;
 
-    p {
-        color: colors.$teal;
-    }
+  p {
+    color: colors.$teal;
+  }
 }

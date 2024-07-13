@@ -3,123 +3,123 @@
 @use '../../styles/mixins';
 
 .section-contact {
-    background-color: colors.$primary;
-    border-top: 1rem solid colors.$teal;
-    overflow-y: hidden;
+  background-color: colors.$primary;
+  border-top: 1rem solid colors.$teal;
+  overflow-y: hidden;
+  position: relative;
+
+  &__wrapper {
+    @include mixins.section;
+
+    display: flex;
+    flex-direction: row;
+    height: 60rem;
+    justify-content: space-between;
     position: relative;
 
-    &__wrapper {
-        @include mixins.section;
-
-        display: flex;
-        flex-direction: row;
-        height: 60rem;
-        justify-content: space-between;
-        position: relative;
-
-        @media screen and (max-width: breakpoints.$md) {
-            flex-direction: column;
-        }
-
-        .header {
-            color: colors.$white;
-            position: relative;
-            z-index: 2;
-        }
+    @media screen and (max-width: breakpoints.$md) {
+      flex-direction: column;
     }
 
-    .profile {
-        height: 100%;
-        left: -28rem;
-        mix-blend-mode: exclusion;
-        opacity: 0.4;
+    .header {
+      color: colors.$white;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .profile {
+    height: 100%;
+    left: -28rem;
+    mix-blend-mode: exclusion;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 60rem;
+  }
+
+  &__form {
+    $form: &;
+
+    align-self: center;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (max-width: breakpoints.$xxl) {
+      justify-self: center;
+    }
+
+    &-item {
+      margin-bottom: 3rem;
+      position: relative;
+      width: 100%;
+
+      label {
+        color: colors.$white;
+        display: inline;
+        letter-spacing: 0.25rem;
         position: absolute;
-        top: 0;
-        width: 60rem;
-    }
-
-    &__form {
-        $form: &;
-
-        align-self: center;
-        position: relative;
+        text-transform: uppercase;
+        top: -2rem;
         z-index: 2;
+      }
 
-        @media screen and (max-width: breakpoints.$xxl) {
-            justify-self: center;
+      input {
+        height: 4.5rem;
+      }
+
+      textarea {
+        min-height: 10rem;
+      }
+
+      input,
+      textarea {
+        border: 0.1rem solid colors.$teal;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        color: colors.$primary;
+        display: block;
+        font-family:
+          Outfit,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          'Fira Sans',
+          'Droid Sans',
+          'Helvetica Neue',
+          sans-serif;
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+        padding: 1rem 1.4rem;
+        width: 100%;
+
+        &:focus {
+          outline-color: colors.$teal;
         }
 
-        &-item {
-            margin-bottom: 3rem;
-            position: relative;
-            width: 100%;
-
-            label {
-                color: colors.$white;
-                display: inline;
-                letter-spacing: 0.25rem;
-                position: absolute;
-                text-transform: uppercase;
-                top: -2rem;
-                z-index: 2;
-            }
-
-            input {
-                height: 4.5rem;
-            }
-
-            textarea {
-                min-height: 10rem;
-            }
-
-            input,
-            textarea {
-                border: 0.1rem solid colors.$teal;
-                border-radius: 0.5rem;
-                box-sizing: border-box;
-                color: colors.$primary;
-                display: block;
-                font-family:
-                    Outfit,
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    'Segoe UI',
-                    Roboto,
-                    Oxygen,
-                    Ubuntu,
-                    Cantarell,
-                    'Fira Sans',
-                    'Droid Sans',
-                    'Helvetica Neue',
-                    sans-serif;
-                font-size: 1.8rem;
-                letter-spacing: 0.1rem;
-                padding: 1rem 1.4rem;
-                width: 100%;
-
-                &:focus {
-                    outline-color: colors.$teal;
-                }
-
-                + label {
-                    color: colors.$white;
-                    font-size: 1.2rem;
-                    transition: all 0.2s ease-out;
-                }
-
-                &:not(:focus):placeholder-shown {
-                    + label {
-                        color: colors.$teal;
-                        font-size: 1.4rem;
-                        transform: translateX(2rem) translateY(3.35rem);
-                    }
-                }
-            }
+        + label {
+          color: colors.$white;
+          font-size: 1.2rem;
+          transition: all 0.2s ease-out;
         }
 
-        &-group-item {
-            column-gap: 2rem;
-            display: flex;
+        &:not(:focus):placeholder-shown {
+          + label {
+            color: colors.$teal;
+            font-size: 1.4rem;
+            transform: translateX(2rem) translateY(3.35rem);
+          }
         }
+      }
     }
+
+    &-group-item {
+      column-gap: 2rem;
+      display: flex;
+    }
+  }
 }

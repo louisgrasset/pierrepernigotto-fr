@@ -2,31 +2,30 @@
 @use '../../styles/colors';
 
 .arrow {
-    cursor: pointer;
-    fill: colors.$teal;
-    height: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 30px;
-    z-index: 2;
+  cursor: pointer;
+  fill: colors.$teal;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  z-index: 2;
 
-    @media screen and (max-width: breakpoints.$md) {
-        top: calc(100% + 1.7rem);
-    }
+  @media screen and (max-width: breakpoints.$md) {
+    top: calc(100% + 1.7rem);
+  }
 
-    &--left {
-        left: 5px;
-    }
+  &--left {
+    left: 5px;
+  }
 
-    &--right {
-        left: auto;
-        right: 5px;
-    }
+  &--right {
+    left: auto;
+    right: 5px;
+  }
 
-    &--disabled {
-        cursor: not-allowed;
-        fill: rgba(colors.$teal, 30%);
-    }
+  &--disabled {
+    cursor: not-allowed;
+    fill: rgba(colors.$teal, 30%);
+  }
 }

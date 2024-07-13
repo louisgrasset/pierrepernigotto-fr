@@ -2,62 +2,62 @@
 @use '../../styles/colors';
 
 .slider {
-    position: relative;
+  position: relative;
 
-    .keen-slider {
-        &::before,
-        &::after {
-            bottom: 0;
-            content: '';
-            height: 100%;
-            position: absolute;
-            top: 0;
-            width: 1rem;
-            z-index: 2;
-        }
-
-        &::before {
-            background: linear-gradient(-90deg, rgba(colors.$white, 0) 0%, rgba(colors.$white, 100%) 100%);
-            left: 0;
-        }
-
-        &::after {
-            background: linear-gradient(-90deg, rgba(colors.$white, 100%) 0%, rgba(colors.$white, 0%) 100%);
-            right: 0;
-        }
-
-        &__slide {
-            box-sizing: border-box;
-            padding: 4rem;
-
-            @media screen and (max-width: breakpoints.$md) {
-                padding: 1rem;
-            }
-        }
+  .keen-slider {
+    &::before,
+    &::after {
+      bottom: 0;
+      content: '';
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 1rem;
+      z-index: 2;
     }
 
-    &__dots {
-        display: flex;
-        justify-content: center;
-        padding: 10px 0;
+    &::before {
+      background: linear-gradient(-90deg, rgba(colors.$white, 0) 0%, rgba(colors.$white, 100%) 100%);
+      left: 0;
     }
 
-    &__dot {
-        background: rgba(colors.$teal, 25%);
-        border: 0;
-        border-radius: 50%;
-        cursor: pointer;
-        height: 10px;
-        margin: 0 5px;
-        padding: 5px;
-        width: 10px;
+    &::after {
+      background: linear-gradient(-90deg, rgba(colors.$white, 100%) 0%, rgba(colors.$white, 0%) 100%);
+      right: 0;
     }
 
-    &__dot:focus {
-        outline: none;
-    }
+    &__slide {
+      box-sizing: border-box;
+      padding: 4rem;
 
-    &__dot.active {
-        background: colors.$teal;
+      @media screen and (max-width: breakpoints.$md) {
+        padding: 1rem;
+      }
     }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  &__dot {
+    background: rgba(colors.$teal, 25%);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 10px;
+    margin: 0 5px;
+    padding: 5px;
+    width: 10px;
+  }
+
+  &__dot:focus {
+    outline: none;
+  }
+
+  &__dot.active {
+    background: colors.$teal;
+  }
 }

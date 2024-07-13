@@ -3,123 +3,121 @@
 @use '../../styles/mixins';
 
 .section-studies {
-    @include mixins.section;
+  @include mixins.section;
 
-    .slider {
-        .section-studies__slide {
-            align-content: flex-start;
-            align-items: flex-start;
-            box-sizing: border-box;
-            column-gap: 5rem;
-            cursor: grab;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            row-gap: 5rem;
+  .slider {
+    .section-studies__slide {
+      place-content: flex-start space-evenly;
+      align-items: flex-start;
+      box-sizing: border-box;
+      gap: 5rem;
+      cursor: grab;
+      display: flex;
+      flex-wrap: wrap;
 
-            &:active {
-                cursor: grabbing;
-            }
-        }
+      &:active {
+        cursor: grabbing;
+      }
+    }
+  }
+
+  .study {
+    $study: '.study';
+
+    border-radius: 1.5rem;
+    box-shadow: 0 0.2rem 1rem rgba(colors.$primary, 10%);
+    position: relative;
+
+    @media screen and (min-width: breakpoints.$lg) {
+      flex-basis: calc(50% - 10rem);
+      min-width: 40rem;
     }
 
-    .study {
-        $study: '.study';
-
-        border-radius: 1.5rem;
-        box-shadow: 0 0.2rem 1rem rgba(colors.$primary, 10%);
-        position: relative;
-
-        @media screen and (min-width: breakpoints.$lg) {
-            flex-basis: calc(50% - 10rem);
-            min-width: 40rem;
-        }
-
-        @media screen and (max-width: breakpoints.$lg) {
-            flex-basis: calc(100% - 5rem);
-        }
-
-        @media screen and (max-width: breakpoints.$md) {
-            flex-basis: 100%;
-        }
-
-        &__wrapper {
-            margin-bottom: 1.5rem;
-            padding: 3rem;
-        }
-
-        &__footer {
-            border-bottom-left-radius: inherit;
-            border-bottom-right-radius: inherit;
-            bottom: 0;
-            color: colors.$white;
-            display: flex;
-            font-weight: 500;
-            justify-content: space-between;
-            left: 0;
-            padding: 0.8rem 1.6rem;
-            position: absolute;
-            right: 0;
-
-            span {
-                &::first-letter {
-                    text-transform: uppercase;
-                }
-
-                &:last-child {
-                    font-weight: 600;
-                }
-            }
-        }
-
-        &__header {
-            align-items: flex-start;
-            column-gap: 2rem;
-            display: grid;
-            grid-template-columns: 4rem 1fr;
-
-            @media screen and (max-width: breakpoints.$sm) {
-                font-size: 1.8rem;
-            }
-
-            img {
-                height: auto;
-                margin-top: 0.7rem;
-                width: 100%;
-            }
-
-            h4 {
-                font-size: 2.3rem;
-                font-weight: 500;
-                margin: 0;
-
-                span:first-child {
-                    display: block;
-                    font-size: 1.4rem;
-                }
-            }
-        }
-
-        &__label {
-            font-size: 2.5rem;
-            margin: 2rem 0;
-            text-transform: uppercase;
-
-            @media screen and (max-width: breakpoints.$sm) {
-                font-size: 1.6rem;
-            }
-        }
-
-        &__details {
-            padding-left: 2rem;
-
-            @media screen and (max-width: breakpoints.$sm) {
-                font-size: 1.4rem;
-            }
-        }
-
-        &__tag {
-            @include mixins.tag;
-        }
+    @media screen and (max-width: breakpoints.$lg) {
+      flex-basis: calc(100% - 5rem);
     }
+
+    @media screen and (max-width: breakpoints.$md) {
+      flex-basis: 100%;
+    }
+
+    &__wrapper {
+      margin-bottom: 1.5rem;
+      padding: 3rem;
+    }
+
+    &__footer {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+      bottom: 0;
+      color: colors.$white;
+      display: flex;
+      font-weight: 500;
+      justify-content: space-between;
+      left: 0;
+      padding: 0.8rem 1.6rem;
+      position: absolute;
+      right: 0;
+
+      span {
+        &::first-letter {
+          text-transform: uppercase;
+        }
+
+        &:last-child {
+          font-weight: 600;
+        }
+      }
+    }
+
+    &__header {
+      align-items: flex-start;
+      column-gap: 2rem;
+      display: grid;
+      grid-template-columns: 4rem 1fr;
+
+      @media screen and (max-width: breakpoints.$sm) {
+        font-size: 1.8rem;
+      }
+
+      img {
+        height: auto;
+        margin-top: 0.7rem;
+        width: 100%;
+      }
+
+      h4 {
+        font-size: 2.3rem;
+        font-weight: 500;
+        margin: 0;
+
+        span:first-child {
+          display: block;
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &__label {
+      font-size: 2.5rem;
+      margin: 2rem 0;
+      text-transform: uppercase;
+
+      @media screen and (max-width: breakpoints.$sm) {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__details {
+      padding-left: 2rem;
+
+      @media screen and (max-width: breakpoints.$sm) {
+        font-size: 1.4rem;
+      }
+    }
+
+    &__tag {
+      @include mixins.tag;
+    }
+  }
 }

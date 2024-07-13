@@ -3,196 +3,198 @@
 @use '../../styles/breakpoints';
 
 .navigation {
-    $nav: &;
+  $nav: &;
 
-    @include mixins.section;
+  @include mixins.section;
 
-    display: flex;
-    font-size: 2rem;
-    justify-content: space-between;
-    padding: 4rem 0;
 
-    @media screen and (max-width: breakpoints.$md) {
-        padding-bottom: 1rem;
-        padding-top: 2rem;
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  padding: 4rem 0;
+
+  @media screen and (max-width: breakpoints.$md) {
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+  }
+
+
+  &__logo {
+    font-weight: 600;
+
+    span {
+      color: colors.$secondary;
     }
+  }
 
-    &__logo {
-        font-weight: 600;
+  &__toggle {
+    appearance: none;
+    background-color: colors.$teal;
+    border: 0;
+    border-radius: 0.3rem;
+    color: colors.$white;
+    cursor: pointer;
+    display: none;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+    padding: 0.7rem 1rem;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 2;
 
-        span {
-            color: colors.$secondary;
-        }
+    @media screen and (max-width: breakpoints.$xl) {
+      display: block;
     }
+  }
 
-    &__toggle {
-        appearance: none;
-        background-color: colors.$teal;
-        border: 0;
-        border-radius: 0.3rem;
-        color: colors.$white;
-        cursor: pointer;
-        display: none;
-        font-weight: 600;
-        letter-spacing: 0.15rem;
-        padding: 0.7rem 1rem;
-        position: relative;
-        text-transform: uppercase;
+  &__wrapper {
+    @media screen and (max-width: breakpoints.$xl) {
+      background-color: colors.$primary;
+      display: none;
+      height: 100vh;
+      left: 0;
+      overscroll-behavior: contain;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 99;
+
+      &::after {
+        background-color: rgba(colors.$primary, 0.7);
+        content: '';
+        height: 100vh;
+        left: 0;
+        position: absolute;
+        top: -100vh;
+        width: 100%;
         z-index: 2;
+      }
 
+      #{$nav} {
+        box-sizing: border-box;
+
+        &__list {
+          flex-direction: column;
+          margin-top: 5rem;
+          overflow-y: auto;
+
+          &::before {
+            color: colors.$teal;
+            content: 'Menu';
+            font-size: 20rem;
+            font-weight: 800;
+            opacity: 0.05;
+            position: absolute;
+            right: -1rem;
+            text-orientation: mixed;
+            text-transform: uppercase;
+            writing-mode: vertical-rl;
+          }
+
+          &-item {
+            color: colors.$white;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin: 0 5rem;
+            padding: 2rem 0;
+            text-align: left;
+
+            a {
+              &::after {
+                color: colors.$secondary;
+                content: '.';
+              }
+            }
+
+            &:hover::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: breakpoints.$sm) {
+      #{$nav} {
+        &__list {
+          &-item {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  &--active {
+    #{$nav} {
+      &__toggle {
+        appearance: none;
+        background-color: colors.$secondary;
+        border: 0;
+        bottom: 0;
+        color: colors.$white;
+        font-size: 2rem;
+        font-weight: 700;
+        left: 0;
+        padding: 1.5rem;
+        position: fixed;
+        text-transform: uppercase;
+        width: 100%;
+        z-index: 100;
+      }
+
+      &__wrapper {
         @media screen and (max-width: breakpoints.$xl) {
-            display: block;
+          animation: navigation 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+          display: block;
+
+          @keyframes navigation {
+            from {
+              opacity: 0;
+              transform: translateY(100vh);
+            }
+
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
         }
+      }
     }
+  }
 
-    &__wrapper {
-        @media screen and (max-width: breakpoints.$xl) {
-            background-color: colors.$primary;
-            display: none;
-            height: 100vh;
-            left: 0;
-            overscroll-behavior: contain;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 99;
+  &__list {
+    column-gap: 4rem;
+    display: flex;
+    font-weight: 500;
+    list-style: none;
+    margin: 0;
+    max-height: calc(100% - 5rem);
+    overscroll-behavior: contain;
+    padding: 0;
 
-            &::after {
-                background-color: rgba(colors.$primary, 0.7);
-                content: '';
-                height: 100vh;
-                left: 0;
-                position: absolute;
-                top: -100vh;
-                width: 100%;
-                z-index: 2;
-            }
+    &-item {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
 
-            #{$nav} {
-                box-sizing: border-box;
+      &::after {
+        background-color: colors.$teal;
+        bottom: -3rem;
+        content: '';
+        height: 0.3rem;
+        left: 0;
+        position: absolute;
+        transition: width 0.3s ease-out;
+        width: 0;
+      }
 
-                &__list {
-                    flex-direction: column;
-                    margin-top: 5rem;
-                    overflow-y: auto;
-
-                    &::before {
-                        color: colors.$teal;
-                        content: 'Menu';
-                        font-size: 20rem;
-                        font-weight: 800;
-                        opacity: 0.05;
-                        position: absolute;
-                        right: -1rem;
-                        text-orientation: mixed;
-                        text-transform: uppercase;
-                        writing-mode: vertical-rl;
-                    }
-
-                    &-item {
-                        color: colors.$white;
-                        font-size: 4.5rem;
-                        font-weight: 700;
-                        margin: 0 5rem;
-                        padding: 2rem 0;
-                        text-align: left;
-
-                        a {
-                            &::after {
-                                color: colors.$secondary;
-                                content: '.';
-                            }
-                        }
-
-                        &:hover::after {
-                            display: none;
-                        }
-                    }
-                }
-            }
+      &:hover {
+        &::after {
+          width: 100%;
         }
-
-        @media screen and (max-width: breakpoints.$sm) {
-            #{$nav} {
-                &__list {
-                    &-item {
-                        font-size: 3rem;
-                    }
-                }
-            }
-        }
+      }
     }
-
-    &--active {
-        #{$nav} {
-            &__toggle {
-                appearance: none;
-                background-color: colors.$secondary;
-                border: 0;
-                bottom: 0;
-                color: colors.$white;
-                font-size: 2rem;
-                font-weight: 700;
-                left: 0;
-                padding: 1.5rem;
-                position: fixed;
-                text-transform: uppercase;
-                width: 100%;
-                z-index: 100;
-            }
-
-            &__wrapper {
-                @media screen and (max-width: breakpoints.$xl) {
-                    animation: navigation 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-                    display: block;
-
-                    @keyframes navigation {
-                        from {
-                            opacity: 0;
-                            transform: translateY(100vh);
-                        }
-
-                        to {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    &__list {
-        column-gap: 4rem;
-        display: flex;
-        font-weight: 500;
-        list-style: none;
-        margin: 0;
-        max-height: calc(100% - 5rem);
-        overscroll-behavior: contain;
-        padding: 0;
-
-        &-item {
-            cursor: pointer;
-            display: inline-block;
-            position: relative;
-
-            &::after {
-                background-color: colors.$teal;
-                bottom: -3rem;
-                content: '';
-                height: 0.3rem;
-                left: 0;
-                position: absolute;
-                transition: width 0.3s ease-out;
-                width: 0;
-            }
-
-            &:hover {
-                &::after {
-                    width: 100%;
-                }
-            }
-        }
-    }
+  }
 }

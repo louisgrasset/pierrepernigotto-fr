@@ -3,125 +3,135 @@
 @use '../../styles/mixins';
 
 .section-skills {
-    @include mixins.section;
+  @include mixins.section;
 
-    &__slide {
-        align-items: flex-start;
-        column-gap: 4rem;
-        display: grid;
-        flex-wrap: wrap;
-        grid-template-columns: repeat(3, 1fr);
-        row-gap: 1rem;
+  &__slide {
+    align-items: flex-start;
+    gap: 1rem 4rem;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
 
-        @media screen and (max-width: breakpoints.$md) {
-            grid-template-columns: unset;
-            grid-template-rows: repeat(4, 1fr);
-        }
+    @media screen and (max-width: breakpoints.$md) {
+      grid-template-columns: unset;
+      grid-template-rows: repeat(4, 1fr);
     }
+  }
 
-    &__filters {
-        padding-left: 0;
-        margin-bottom: 3rem;
-        &-item {
-            list-style: none;
-            display: inline-block;
-            margin-bottom: .2rem;
-            margin-right: .4rem;
+  &__filters {
+    padding-left: 0;
+    margin-bottom: 3rem;
 
-            button {
-                background-color: colors.$teal;
-                border-radius: 0.5rem;
-                color: #fff;
-                font-size: 1.2rem;
-                font-weight: 600;
-                letter-spacing: 0.05rem;
-                padding: 0.3rem 1rem;
-                text-transform: uppercase;
-                appearance: none;
-                border: none;
-                cursor: pointer;
-                transition: padding-right .1s ease-out;
-                &::before, &::after {
-                    opacity: 0;
-                }
-            }
-            &.is-enabled {
-                button {
-                    background-color: colors.$teal;
-                    padding-right: 2.2rem;
-                    position: relative;
-                    &::before, &::after {
-                        position: absolute;
-                        height: .2rem;
-                        width: 1rem;
-                        content: '';
-                        background-color: colors.$white;
-                        border-radius: 2px;
-                        top: .85rem;
-                        right: .6rem;
-                        opacity: 1;
+    &-item {
+      list-style: none;
+      display: inline-block;
+      margin-bottom: 0.2rem;
+      margin-right: 0.4rem;
 
-                        @media screen and (max-width: breakpoints.$md) {
-                            top: 1.05rem;
-                        }
-                    }
-                    &::before {
-                        transform: rotate(-45deg);
-                    }
-                    &::after {
-                        transform: rotate(45deg);
-                    }
-                }
-            }
-            &.is-disabled {
-                button {
-                    background-color: colors.$grey;
-                }
-            }
+      button {
+        background-color: colors.$teal;
+        border-radius: 0.5rem;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+        padding: 0.3rem 1rem;
+        text-transform: uppercase;
+        appearance: none;
+        border: 0;
+        cursor: pointer;
+        transition: padding-right 0.1s ease-out;
+
+        &::before,
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      &.is-enabled {
+        button {
+          background-color: colors.$teal;
+          padding-right: 2.2rem;
+          position: relative;
+
+          &::before,
+          &::after {
+            position: absolute;
+            height: 0.2rem;
+            width: 1rem;
+            content: '';
+            background-color: colors.$white;
+            border-radius: 2px;
+            top: 0.85rem;
+            right: 0.6rem;
+            opacity: 1;
 
             @media screen and (max-width: breakpoints.$md) {
-                margin-right: 1rem;
-                margin-bottom: .5rem;
-                button {
-                    padding: .5rem 1.5rem;
-                }
+              top: 1.05rem;
             }
+          }
+
+          &::before {
+            transform: rotate(-45deg);
+          }
+
+          &::after {
+            transform: rotate(45deg);
+          }
         }
-    }
+      }
 
-    .skill {
-        &-item {
-            border-radius: 1.5rem;
-            box-shadow: 0 0.2rem 1rem rgba(colors.$primary, 10%);
-            box-sizing: border-box;
-            column-gap: 2rem;
-            display: grid;
-            grid-template-columns: 5rem 1fr;
-            margin: 0 auto;
-            padding: 1.5rem;
-            width: 100%;
-
-            &__logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                img {
-                    height: auto;
-                    width: 60%;
-                }
-            }
-
-            &__name {
-                font-size: 1.4rem;
-                font-weight: 600;
-                margin: 0;
-            }
-
-            &__detail {
-                margin: 0;
-                opacity: .6;
-                font-size: 1.3rem;
-            }
+      &.is-disabled {
+        button {
+          background-color: colors.$grey;
         }
+      }
+
+      @media screen and (max-width: breakpoints.$md) {
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+
+        button {
+          padding: 0.5rem 1.5rem;
+        }
+      }
     }
+  }
+
+  .skill {
+    &-item {
+      border-radius: 1.5rem;
+      box-shadow: 0 0.2rem 1rem rgba(colors.$primary, 10%);
+      box-sizing: border-box;
+      column-gap: 2rem;
+      display: grid;
+      grid-template-columns: 5rem 1fr;
+      margin: 0 auto;
+      padding: 1.5rem;
+      width: 100%;
+
+      &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          height: auto;
+          width: 60%;
+        }
+      }
+
+      &__name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      &__detail {
+        margin: 0;
+        opacity: 0.6;
+        font-size: 1.3rem;
+      }
+    }
+  }
 }

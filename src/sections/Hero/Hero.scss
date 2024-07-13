@@ -3,151 +3,151 @@
 @use '../../styles/breakpoints';
 
 .section-hero {
-    $hero: &;
+  $hero: &;
+  
+  background-color: rgba(colors.$teal, 10%);
+  font-size: 2rem;
+  padding-bottom: 5rem;
 
-    background-color: rgba(colors.$teal, 10%);
+  @media screen and (width <= 1100px) {
+    text-align: center;
+  }
+
+  &__wrapper {
+    @include mixins.section;
+
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+
+    .profile {
+      justify-self: flex-end;
+      max-width: 45rem;
+
+      @media screen and (max-width: breakpoints.$xxl) {
+        max-width: 35rem;
+      }
+    }
+
+    @media screen and (max-width: breakpoints.$xl) {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    @media screen and (width <= 1100px) {
+      display: flex;
+      flex-direction: column-reverse;
+
+      .profile {
+        max-width: 20rem;
+      }
+      #{$hero} {
+        &__subcontent,
+        &__actions {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 70rem;
+        }
+
+        &__actions {
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
+    }
+
+    @media screen and (max-width: breakpoints.$md) {
+      .profile {
+        max-width: 15rem;
+      }
+      #{$hero} {
+        &__actions {
+          flex-direction: column-reverse;
+
+          .button {
+            margin: 1rem auto;
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+
+  &__header {
+    font-size: 10rem;
+    line-height: 10rem;
+    margin-bottom: 4rem;
+
+    @media screen and (max-width: breakpoints.$xxl) {
+      font-size: 8rem;
+      line-height: 8rem;
+    }
+
+    @media screen and (max-width: breakpoints.$xl) {
+      margin-top: 0;
+    }
+
+    @media screen and (max-width: breakpoints.$lg) {
+      font-size: 6rem;
+      line-height: 6rem;
+    }
+
+    @media screen and (max-width: breakpoints.$md) {
+      margin-top: 2rem;
+    }
+
+    @media screen and (max-width: breakpoints.$xs) {
+      font-size: 4.5rem;
+      line-height: 4.5rem;
+    }
+
+    span {
+      color: colors.$secondary;
+    }
+  }
+
+  &__socials {
+    svg {
+      height: 2rem;
+      margin-left: 1rem;
+      position: relative;
+      top: 0.2rem;
+      width: 2rem;
+    }
+
+    span {
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+
+  &__first {
+    max-width: 60rem;
+
+    @media screen and (width <= 1100px) {
+      margin: 0 auto;
+    }
+  }
+
+  &__second {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (width <= 1100px) {
+      height: 25vh;
+    }
+  }
+
+  &__subcontent {
+    color: colors.$teal;
     font-size: 2rem;
-    padding-bottom: 5rem;
+    font-weight: 500;
+  }
 
-    @media screen and (max-width: 1100px) {
-        text-align: center;
+  &__actions {
+    margin: 4rem 0;
+
+    button:not(:first-child) {
+      margin-left: 2rem;
     }
-
-    &__wrapper {
-        @include mixins.section;
-
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-
-        .profile {
-            justify-self: flex-end;
-            max-width: 45rem;
-
-            @media screen and (max-width: breakpoints.$xxl) {
-                max-width: 35rem;
-            }
-        }
-
-        @media screen and (max-width: breakpoints.$xl) {
-            padding-bottom: 0;
-            padding-top: 0;
-        }
-
-        @media screen and (max-width: 1100px) {
-            display: flex;
-            flex-direction: column-reverse;
-
-            .profile {
-                max-width: 20rem;
-            }
-            #{$hero} {
-                &__subcontent,
-                &__actions {
-                    margin-left: auto;
-                    margin-right: auto;
-                    max-width: 70rem;
-                }
-
-                &__actions {
-                    display: flex;
-                    justify-content: space-evenly;
-                }
-            }
-        }
-
-        @media screen and (max-width: breakpoints.$md) {
-            .profile {
-                max-width: 15rem;
-            }
-            #{$hero} {
-                &__actions {
-                    flex-direction: column-reverse;
-
-                    .button {
-                        margin: 1rem auto;
-                        width: 80%;
-                    }
-                }
-            }
-        }
-    }
-
-    &__header {
-        font-size: 10rem;
-        line-height: 10rem;
-        margin-bottom: 4rem;
-
-        @media screen and (max-width: breakpoints.$xxl) {
-            font-size: 8rem;
-            line-height: 8rem;
-        }
-
-        @media screen and (max-width: breakpoints.$xl) {
-            margin-top: 0;
-        }
-
-        @media screen and (max-width: breakpoints.$lg) {
-            font-size: 6rem;
-            line-height: 6rem;
-        }
-
-        @media screen and (max-width: breakpoints.$md) {
-            margin-top: 2rem;
-        }
-
-        @media screen and (max-width: breakpoints.$xs) {
-            font-size: 4.5rem;
-            line-height: 4.5rem;
-        }
-
-        span {
-            color: colors.$secondary;
-        }
-    }
-
-    &__socials {
-        svg {
-            height: 2rem;
-            margin-left: 1rem;
-            position: relative;
-            top: 0.2rem;
-            width: 2rem;
-        }
-
-        span {
-            display: inline-block;
-            white-space: nowrap;
-        }
-    }
-
-    &__first {
-        max-width: 60rem;
-
-        @media screen and (max-width: 1100px) {
-            margin: 0 auto;
-        }
-    }
-
-    &__second {
-        display: flex;
-        justify-content: center;
-
-        @media screen and (max-width: 1100px) {
-            height: 25vh;
-        }
-    }
-
-    &__subcontent {
-        color: colors.$teal;
-        font-size: 2rem;
-        font-weight: 500;
-    }
-
-    &__actions {
-        margin: 4rem 0;
-
-        button:not(:first-child) {
-            margin-left: 2rem;
-        }
-    }
+  }
 }

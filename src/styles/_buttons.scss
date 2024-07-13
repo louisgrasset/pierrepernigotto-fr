@@ -1,50 +1,50 @@
 @use './colors';
 
 .button {
-    appearance: none;
-    border: 0.1rem solid transparent;
-    border-radius: 0.8rem;
-    box-sizing: border-box;
-    cursor: pointer;
-    font-size: 1.6rem;
-    font-weight: 600;
-    height: 4.6rem;
-    letter-spacing: 0.25rem;
-    overflow: hidden;
-    padding: 1.2rem 3rem;
-    text-overflow: ellipsis;
-    text-transform: uppercase;
-    white-space: nowrap;
+  appearance: none;
+  border: 0.1rem solid transparent;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  height: 4.6rem;
+  letter-spacing: 0.25rem;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
 
-    &:hover {
-        opacity: 0.95;
-    }
+  &:hover {
+    opacity: 0.95;
+  }
 
-    &:focus,
-    &:active {
-        opacity: 0.75;
-    }
+  &:focus,
+  &:active {
+    opacity: 0.75;
+  }
 
-    + .button {
-        margin-left: 2rem;
-    }
+  + .button {
+    margin-left: 2rem;
+  }
 
-    svg,
-    img {
-        height: 1.6rem;
-        margin-left: 1rem;
-        vertical-align: middle;
-    }
+  svg,
+  img {
+    height: 1.6rem;
+    margin-left: 1rem;
+    vertical-align: middle;
+  }
 
-    &--primary {
-        background-color: colors.$teal;
-        border-color: colors.$teal;
-        color: colors.$white;
-    }
+  &--primary {
+    background-color: colors.$teal;
+    border-color: colors.$teal;
+    color: colors.$white;
+  }
 
-    &--secondary {
-        background-color: colors.$white;
-        border-color: colors.$teal;
-        color: colors.$teal;
-    }
+  &--secondary {
+    background-color: colors.$white;
+    border-color: colors.$teal;
+    color: colors.$teal;
+  }
 }

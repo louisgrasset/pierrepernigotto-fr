@@ -3,108 +3,108 @@
 @use '../../styles/mixins';
 
 .section-statistics {
-    $statistics: &;
+  $statistics: &;
 
-    @include mixins.section;
+  @include mixins.section;
 
-    &:not(:first-child) {
-        padding-top: 0;
+  &:not(:first-child) {
+    padding-top: 0;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+
+    @media screen and (max-width: breakpoints.$md) {
+      flex-direction: column;
     }
 
-    &__list {
-        display: flex;
-        justify-content: space-between;
-        list-style: none;
-        padding: 0;
+    &-item {
+      align-items: center;
+      color: colors.$grey;
+      display: inline-block;
+      font-weight: 500;
+      margin: 0 auto;
+      position: relative;
+      text-align: left;
+
+      @media screen and (max-width: breakpoints.$md) {
+        margin-bottom: 6rem;
+
+        &::after {
+          background-color: rgba(colors.$secondary, 40%);
+          bottom: -4rem;
+          content: '';
+          height: 0.3rem;
+          left: calc(50% - 1.5rem);
+          position: absolute;
+          width: 3rem;
+        }
+      }
+
+      &__count {
+        color: colors.$primary;
+        display: block;
+        font-size: 6rem;
+        font-weight: 600;
+
+        &:not(:first-child) {
+          display: inline;
+        }
+
+        span {
+          display: inline;
+        }
+
+        @media screen and (min-width: breakpoints.$md) and (max-width: breakpoints.$lg) {
+          font-size: 4rem;
+        }
+      }
+
+      &:first-child {
+        color: colors.$white;
+        font-size: 1.4rem;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+
+        @media screen and (min-width: breakpoints.$md) and (max-width: breakpoints.$lg) {
+          transform: scale(0.7);
+        }
+
+        &::before {
+          background-color: colors.$secondary;
+          border-radius: 50%;
+          content: '';
+          height: 20rem;
+          left: calc(50% - 10rem);
+          position: absolute;
+          top: calc(50% - 10rem);
+          width: 20rem;
+          z-index: -1;
+        }
+
+        span {
+          color: inherit;
+          font-size: 10rem;
+          line-height: 9rem;
+          position: relative;
+          z-index: 1;
+        }
+      }
+
+      &--separator {
+        color: rgba(colors.$teal, 40%);
+        font-size: 6rem;
+        text-align: center;
+        width: 2.5rem;
 
         @media screen and (max-width: breakpoints.$md) {
-            flex-direction: column;
+          display: none;
         }
-
-        &-item {
-            align-items: center;
-            color: colors.$grey;
-            display: inline-block;
-            font-weight: 500;
-            margin: 0 auto;
-            position: relative;
-            text-align: left;
-
-            @media screen and (max-width: breakpoints.$md) {
-                margin-bottom: 6rem;
-
-                &::after {
-                    background-color: rgba(colors.$secondary, 40%);
-                    bottom: -4rem;
-                    content: '';
-                    height: 0.3rem;
-                    left: calc(50% - 1.5rem);
-                    position: absolute;
-                    width: 3rem;
-                }
-            }
-
-            &__count {
-                color: colors.$primary;
-                display: block;
-                font-size: 6rem;
-                font-weight: 600;
-
-                &:not(:first-child) {
-                    display: inline;
-                }
-
-                span {
-                    display: inline;
-                }
-
-                @media screen and (min-width: breakpoints.$md) and (max-width: breakpoints.$lg) {
-                    font-size: 4rem;
-                }
-            }
-
-            &:first-child {
-                color: colors.$white;
-                font-size: 1.4rem;
-                position: relative;
-                text-align: center;
-                z-index: 1;
-
-                @media screen and (min-width: breakpoints.$md) and (max-width: breakpoints.$lg) {
-                    transform: scale(0.7);
-                }
-
-                &::before {
-                    background-color: colors.$secondary;
-                    border-radius: 50%;
-                    content: '';
-                    height: 20rem;
-                    left: calc(50% - 10rem);
-                    position: absolute;
-                    top: calc(50% - 10rem);
-                    width: 20rem;
-                    z-index: -1;
-                }
-
-                span {
-                    color: inherit;
-                    font-size: 10rem;
-                    line-height: 9rem;
-                    position: relative;
-                    z-index: 1;
-                }
-            }
-
-            &--separator {
-                color: rgba(colors.$teal, 40%);
-                font-size: 6rem;
-                text-align: center;
-                width: 2.5rem;
-
-                @media screen and (max-width: breakpoints.$md) {
-                    display: none;
-                }
-            }
-        }
+      }
     }
+  }
 }

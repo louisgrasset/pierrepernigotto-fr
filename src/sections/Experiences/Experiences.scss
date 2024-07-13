@@ -4,136 +4,136 @@
 @use 'sass:math';
 
 .section-experiences {
-    @include mixins.section;
+  @include mixins.section;
 
-    .header {
-        &-title {
-            @media screen and (max-width: breakpoints.$md) {
-                margin-top: unset;
-            }
-        }
+  .header {
+    &-title {
+      @media screen and (max-width: breakpoints.$md) {
+        margin-top: unset;
+      }
+    }
+  }
+
+  &__wrapper {
+    column-gap: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .experience {
+    margin-top: 4rem;
+
+    &__company {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      margin-bottom: 4rem;
+
+      &-logo {
+        height: 6rem;
+        width: 6rem;
+      }
+
+      &-name {
+        font-size: 3rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      &-location {
+        color: colors.$teal;
+        margin: 0;
+      }
     }
 
-    &__wrapper {
-        column-gap: 12rem;
-        display: flex;
-        flex-wrap: wrap;
+    .tag {
+      @include mixins.tag;
     }
 
-    .experience {
-        margin-top: 4rem;
-
-        &__company {
-            display: grid;
-            grid-template-columns: 8rem 1fr;
-            margin-bottom: 4rem;
-
-            &-logo {
-                height: 6rem;
-                width: 6rem;
-            }
-
-            &-name {
-                font-size: 3rem;
-                font-weight: 600;
-                margin: 0;
-            }
-
-            &-location {
-                color: colors.$teal;
-                margin: 0;
-            }
-        }
-
-        .tag {
-            @include mixins.tag;
-        }
-
-        &__positions {
-            list-style: none;
-            padding: 0;
-        }
-
-        &__position {
-            &-item {
-                $offset: 3rem;
-
-                margin-bottom: #{$offset};
-                padding-left: 6rem;
-                position: relative;
-
-                &::before {
-                    background-color: colors.$teal;
-                    content: '';
-                    height: calc(100% + #{$offset});
-                    left: #{2.5rem + 0.2rem};
-                    position: absolute;
-                    top: 1rem;
-                    width: 0.2rem;
-                }
-
-                &::after {
-                    $size: 1rem;
-
-                    background-color: colors.$teal;
-                    border-radius: 50%;
-                    content: '';
-                    height: #{$size};
-                    left: #{$size + 1.25rem};
-                    position: absolute;
-                    top: 0.5rem;
-                    width: #{$size};
-                }
-
-                &:first-child {
-                    &::after {
-                        $size: 2rem;
-
-                        background-color: lighten(colors.$teal, 30%);
-                        border: 0.3rem solid colors.$teal;
-                        border-spacing: 1rem;
-                        box-sizing: border-box;
-                        height: $size;
-                        left: #{math.div($size, 2) + 0.8rem};
-                        width: $size;
-                    }
-                }
-            }
-
-            &-label {
-                font-size: 2rem;
-                font-weight: 600;
-                margin: 0;
-            }
-
-            &-dates {
-                color: colors.$teal;
-                font-weight: 500;
-                margin: 0.5rem 0 1rem;
-            }
-
-            &-detail {
-                &__toggle {
-                    appearance: none;
-                    background-color: colors.$secondary;
-                    border: 0.4px solid  colors.$secondary;
-                    border-radius: 0.5rem;
-                    color: colors.$white;
-                    cursor: pointer;
-                    font-weight: 600;
-                    height: 2.1rem;
-                    margin-left: 1rem;
-                    text-align: center;
-                }
-
-                &__content {
-                    margin-top: 1rem;
-
-                    ul {
-                        padding-left: 1.8rem;
-                    }
-                }
-            }
-        }
+    &__positions {
+      list-style: none;
+      padding: 0;
     }
+
+    &__position {
+      &-item {
+        $offset: 3rem;
+
+        margin-bottom: #{$offset};
+        padding-left: 6rem;
+        position: relative;
+
+        &::before {
+          background-color: colors.$teal;
+          content: '';
+          height: calc(100% + #{$offset});
+          left: #{2.5rem + 0.2rem};
+          position: absolute;
+          top: 1rem;
+          width: 0.2rem;
+        }
+
+        &::after {
+          $size: 1rem;
+
+          background-color: colors.$teal;
+          border-radius: 50%;
+          content: '';
+          height: #{$size};
+          left: #{$size + 1.25rem};
+          position: absolute;
+          top: 0.5rem;
+          width: #{$size};
+        }
+
+        &:first-child {
+          &::after {
+            $size: 2rem;
+
+            background-color: lighten(colors.$teal, 30%);
+            border: 0.3rem solid colors.$teal;
+            border-spacing: 1rem;
+            box-sizing: border-box;
+            height: $size;
+            left: #{math.div($size, 2) + 0.8rem};
+            width: $size;
+          }
+        }
+      }
+
+      &-label {
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      &-dates {
+        color: colors.$teal;
+        font-weight: 500;
+        margin: 0.5rem 0 1rem;
+      }
+
+      &-detail {
+        &__toggle {
+          appearance: none;
+          background-color: colors.$secondary;
+          border: 0.4px solid  colors.$secondary;
+          border-radius: 0.5rem;
+          color: colors.$white;
+          cursor: pointer;
+          font-weight: 600;
+          height: 2.1rem;
+          margin-left: 1rem;
+          text-align: center;
+        }
+
+        &__content {
+          margin-top: 1rem;
+
+          ul {
+            padding-left: 1.8rem;
+          }
+        }
+      }
+    }
+  }
 }

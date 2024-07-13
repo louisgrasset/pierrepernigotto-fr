@@ -2,47 +2,47 @@
 @use './colors';
 
 @mixin section () {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 160rem;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 160rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
 
-    @media screen and (max-width: breakpoints.$xxl) {
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
+  @media screen and (max-width: breakpoints.$xxl) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 
-    @media screen and (max-width: breakpoints.$sm) {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+  @media screen and (max-width: breakpoints.$sm) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 @mixin tag () {
-    background-color: colors.$teal;
-    border-radius: 0.5rem;
-    color: colors.$white;
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 0.05rem;
-    padding: 0.3rem 1rem;
-    text-transform: uppercase;
+  background-color: colors.$teal;
+  border-radius: 0.5rem;
+  color: colors.$white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  padding: 0.3rem 1rem;
+  text-transform: uppercase;
 }
 
 @mixin scrollbar {
-    &::-webkit-scrollbar {
-        height: 0.4em;
-        width: 0.4em;
-    }
+  &::-webkit-scrollbar {
+    height: 0.4em;
+    width: 0.4em;
+  }
 
-    &::-webkit-scrollbar,
-    &::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-        overflow: visible;
-    }
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    overflow: visible;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        background: lighten(colors.$teal, 10%);
-    }
+  &::-webkit-scrollbar-thumb {
+    background: lighten(colors.$teal, 10%);
+  }
 }
