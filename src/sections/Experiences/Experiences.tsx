@@ -52,8 +52,13 @@ export function Experiences () {
                     details: [
                         "Application des stratégies de sécurité (techniques et organisationnelles)",
                         "Administration du SI Fives Cryo",
+                        "Correction des vulnérabilités",
+                        "Migration de serveurs Linux & Windows",
+                        "Sécurisation des Active Directory de la Business Line Energy | Cryogenics (soit 4 fiiales Fives dont 3 internationales)",
                         "Mise en oeuvre de directives",
-                        "Missions IT diverses"
+                        "Gestion et Organisation des activités du Cybermoi/S sur plusieurs filiales Fives",
+                        "Participation à la Cartographie OT et SI",
+                        "Missions IT diverses",
                     ],
                     tags: ["CDI"],
                 },
