@@ -20,6 +20,7 @@ export function Hero () {
                             "Ingénieur Systèmes chez Fives Cryo.",
                             "Ingénieur Réseaux chez Fives Cryo.",
                             "Ingénieur Cybersécurité chez Fives Cryo.",
+                            "Ingénieur chez vous ?"
                         ]} />
                     </h2>
                     <div className="section-hero__actions">
