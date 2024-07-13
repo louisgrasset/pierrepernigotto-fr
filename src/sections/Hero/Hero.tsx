@@ -4,6 +4,7 @@ import "./Hero.scss";
 import { Link } from "react-scroll";
 
 import { Navigation, Profile } from "../../components";
+import { TypeMachine } from "../../components/Typemachine/Typemachine";
 
 export function Hero () {
     return (
@@ -15,7 +16,11 @@ export function Hero () {
                         Pierre<br />Pernigotto<span>.</span>
                     </h1>
                     <h2 className='section-hero__subcontent'>
-                    Ingénieur Systèmes, Réseaux & Cybersécurité  chez <a href="https://www.fivesgroup.com/fr/energy-cryogenics" target="_blank" rel="noreferrer">Fives Cryo</a>.
+                        <TypeMachine sentences={[
+                            "Ingénieur Systèmes chez Fives Cryo.",
+                            "Ingénieur Réseaux chez Fives Cryo.",
+                            "Ingénieur Cybersécurité chez Fives Cryo.",
+                        ]} />
                     </h2>
                     <div className="section-hero__actions">
                         <Link
