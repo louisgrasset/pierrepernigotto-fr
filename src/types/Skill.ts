@@ -2,5 +2,6 @@ export type Skill = {
     name: string,
     id: string,
     detail: string,
-    tags: string[]
+    tags: string[],
+    featured?: boolean
 }

@@ -43,7 +43,14 @@ export function Skills () {
                     {
                         filteredSkills.map(skill => (
                             <div key={skill.id} className="skill-item">
-                                <div  className="skill-item__logo">
+                                {
+                                    skill.featured ?
+                                        <div className="skill-item__featured">
+                                            <img width="12" height="12" src='/images/skills/featured.webp' alt="Outil mis en place par moi-même" title="Outil mis en place par moi-même"/>
+                                        </div>
+                                        : null
+                                }
+                                <div className="skill-item__logo">
                                     <img width="60" height="60" src={`/images/skills/${skill.id}.webp`} alt={skill.name} />
                                 </div>
                                 <div>
