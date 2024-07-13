@@ -34,7 +34,7 @@ export function TypeMachine ({ sentences, } : TypeMachineProps) {
     }, [charIndex, sentenceIndex, sentences]);
 
     return (
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "600", whiteSpace: "pre" }}>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "600" }}>
             {currentSentence}
         </div>
     );

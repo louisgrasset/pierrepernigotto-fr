@@ -142,6 +142,11 @@
     font-size: 2rem;
     font-weight: 500;
     min-height: 25px;
+
+    @media screen and (width <= 800px) {
+      min-height: 50px;
+      max-width: 300px !important;
+    }
   }
 
   &__actions {
