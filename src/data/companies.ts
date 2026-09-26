@@ -1,5 +1,11 @@
 import { Company } from "../types";
 
+export const alfalaval: Company = {
+    name: "Alfa Laval",
+    id: "alfalaval",
+    location: "Golbey, France",
+    color: "#11387f"
+};
 export const fivescryo: Company = {
     name: "Fives Cryo",
     id: "fivescryo",

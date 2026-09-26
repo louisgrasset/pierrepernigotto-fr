@@ -3,7 +3,7 @@ import "./Experiences.scss";
 import { useCallback, useMemo, useState } from "react";
 
 import { Header } from "../../components";
-import { fivescryo, regiongrandest } from "../../data";
+import {alfalaval, fivescryo, regiongrandest} from "../../data";
 import { Experience, Position } from "../../types";
 import { getPeriodDuration } from "../../utils";
 
@@ -44,11 +44,50 @@ export function ExperienceItem ({ position }: ExperienceItemProps) {
 export function Experiences () {
     const data: Experience[] = useMemo(()=> [
         {
+            company: alfalaval,
+            positions: [
+
+                {
+                    label: "Responsable Informatique BU",
+                    start: new Date(2026,8),
+                    details: [
+                        "Management direct de l'équipe locale Support et Infrastructure (3 personnes)",
+                        "Management fonctionnel et opérationnel des équipes informatiques de la BU (Suisse : 2 personnes / Chine : 2 personnes)",
+                        "Gestion des budgets consommables, investissements et exploitation IT",
+                        "Communication informatique société",
+                        "Responsable infrastructures du SI de la BU (4 sociétés : France, Suisse, USA, Chine)",
+                        "Coordination des projets informatiques BU (ressources internes et prestataires externes)",
+                        "Garantie du processus cybersécurité de la BU (supervision des projets cyber, remédiation des vulnérabilités, actions de sensibilisation)",
+                        "Coordination de la transition Fives → Alfa Laval avec les équipes du groupe Alfa Laval",
+                        "Reporting informatique (KPI cyber, indicateurs de performance IT)",
+                    ],
+                    tags: ["CDI"],
+                },
+                {
+                    label: "Ingénieur Systèmes, Réseaux & Cybersécurité",
+                    start: new Date(2025,7),
+                    end: new Date(2026,8),
+                    details: [
+                        "Application des stratégies de sécurité (techniques et organisationnelles)",
+                        "Administration générale du SI local Alfa Laval Golbey",
+                        "Correction des vulnérabilités détectées par les outils implémentés (Pentesting automatisé, EDR, détection de vulnérabilités)",
+                        "Migration de serveurs Linux & Windows",
+                        "Tutorat des apprentis IT",
+                        "Accompagnement à la transition Fives → Alfa Laval",
+                        "Participation à la cartographie OT et SI",
+                        "Missions IT diverses",
+                    ],
+                    tags: ["CDI"],
+                },
+            ]
+        },
+        {
             company: fivescryo,
             positions: [
                 {
-                    label: "Ingénieur Systèmes, Réseau & Cybersécurité",
+                    label: "Ingénieur Systèmes, Réseaux & Cybersécurité",
                     start: new Date(2022, 10),
+                    end: new Date(2025, 7),
                     details: [
                         "Application des stratégies de sécurité (techniques et organisationnelles)",
                         "Administration du SI Fives Cryo",
@@ -100,7 +139,7 @@ export function Experiences () {
                     start: new Date(2020, 0),
                     end: new Date(2022, 0),
                     details: ["Attribution de subvention après délibération en comité sur les dossiers présentés", "Participation à des actions de sensibilisations centrés sur la politique Jeunesse de la région"],
-                    tags: ["Mission Publique"],
+                    tags: ["Engagement citoyen"],
                 }
             ]
         }
