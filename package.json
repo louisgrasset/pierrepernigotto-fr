@@ -26,7 +26,7 @@
     "@types/react-scroll": "^1.8.10",
     "@typescript-eslint/eslint-plugin": "^8.0.0-alpha.41",
     "@typescript-eslint/parser": "^8.0.0-alpha.41",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react": "^6.1.1",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
@@ -36,6 +36,6 @@
     "stylelint-config-sass-guidelines": "^12.0.0",
     "stylelint-config-standard": "^36.0.1",
     "typescript": "^5.5.3",
-    "vite": "^5.3.3"
+    "vite": "^8.3.1"
   }
 }
