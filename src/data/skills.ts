@@ -2,6 +2,36 @@ import { Skill } from "../types";
 
 export const skills: Skill[] = [
     {
+        name: "Crowdstrike",
+        detail: "EDR",
+        id: "crowdstrike",
+        tags: ["cybersécurité"],
+    },
+    {
+        name: "Portail d’entreprise",
+        id: "Mobile Device Management",
+        detail: "portail-entreprise",
+        tags: ["téléphonie"],
+    },
+    {
+        name: "Travail en équipe",
+        id: "travail-en-equipe",
+        detail: "",
+        tags: ["soft skills"],
+    },
+    {
+        name: "Gestion du stress",
+        id: "gestion-du-stress",
+        detail: "",
+        tags: ["soft skills"],
+    },
+    {
+        name: "Organisation",
+        id: "organisation",
+        detail: "",
+        tags: ["soft skills"],
+    },
+    {
         name: "Management",
         id: "management",
         detail: "",
@@ -36,7 +66,7 @@ export const skills: Skill[] = [
         id: "acronissnapdeploy",
         detail: "Outil de déploiement de postes",
         tags: ["administration"],
-        featured: true
+        featured: true,
     },
     {
         name: "Gantt Project",
@@ -49,7 +79,7 @@ export const skills: Skill[] = [
         id: "glpi",
         detail: "Outil de Parc et de Ticketing",
         tags: ["administration"],
-        featured: true
+        featured: true,
     },
     {
         name: "VMware ESXI",
@@ -74,7 +104,7 @@ export const skills: Skill[] = [
         id: "proxmox",
         detail: "Hyperviseur Opensource",
         tags: ["infrastructure"],
-        featured: true
+        featured: true,
     },
     {
         name: "Pentenra",
@@ -87,7 +117,7 @@ export const skills: Skill[] = [
         id: "wazuh",
         detail: "XDR / SIEM Open Source",
         tags: ["cybersécurité"],
-        featured: true
+        featured: true,
     },
     {
         name: "NextCloud",
@@ -128,10 +158,9 @@ export const skills: Skill[] = [
     {
         name: "Kubernetes",
         id: "kubernetes",
-        detail:
-      "Système d'automatisation de déploiement et de montée en charge de conteneurs.",
+        detail: "Système d'automatisation de déploiement et de montée en charge de conteneurs.",
         tags: ["infrastructure"],
-        featured: true
+        featured: true,
     },
     {
         name: "Veeam One",
@@ -204,7 +233,7 @@ export const skills: Skill[] = [
         id: "ping-castle",
         detail: "Outil d'audit AD",
         tags: ["cybersécurité"],
-        featured: true
+        featured: true,
     },
     {
         name: "Qualys",
@@ -269,8 +298,7 @@ export const skills: Skill[] = [
     {
         name: "RDS",
         id: "rds",
-        detail:
-      "Architecture centralisée permettant la connexion à un ordinateur distant",
+        detail: "Architecture centralisée permettant la connexion à un ordinateur distant",
         tags: ["infrastructure"],
     },
 ];

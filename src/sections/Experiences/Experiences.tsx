@@ -3,140 +3,240 @@ import "./Experiences.scss";
 import { useCallback, useMemo, useState } from "react";
 
 import { Header } from "../../components";
-import { fivescryo, regiongrandest } from "../../data";
+import { alfalaval, fivescryo, regiongrandest } from "../../data";
 import { Experience, Position } from "../../types";
 import { getPeriodDuration } from "../../utils";
 
 interface ExperienceItemProps {
-    position: Position
+    position: Position;
 }
 
-export function ExperienceItem ({ position }: ExperienceItemProps) {
+export function ExperienceItem({ position }: ExperienceItemProps) {
     const [toggle, setToggle] = useState(false);
 
     return (
         <li className="experience__position-item">
             <h5 className="experience__position-label">{position.label}</h5>
-            <p className="experience__position-dates">{position.start.toLocaleString("fr-fr", { year: "numeric", month:"long" })} à {position.end ? position.end.toLocaleString("fr-fr", { year: "numeric", month:"long" }) : "maintenant"} {}</p>
-            {
-                position.tags.map((tag, tagIndex) => (
-                    <span className="tag" key={tagIndex}>{tag}</span>
-                ))
-            }
-            <button className="experience__position-detail__toggle" onClick={() => setToggle(! toggle)} title="Voir le detail">
-                {"Voir " +  (toggle ? "moins" : "plus") }
+            <p className="experience__position-dates">
+                {position.start.toLocaleString("fr-fr", {
+                    year: "numeric",
+                    month: "long",
+                })}{" "}
+                à{" "}
+                {position.end
+                    ? position.end.toLocaleString("fr-fr", {
+                          year: "numeric",
+                          month: "long",
+                      })
+                    : "maintenant"}{" "}
+                {}
+            </p>
+            {position.tags.map((tag, tagIndex) => (
+                <span className="tag" key={tagIndex}>
+                    {tag}
+                </span>
+            ))}
+            <button
+                className="experience__position-detail__toggle"
+                onClick={() => setToggle(!toggle)}
+                title="Voir le detail"
+            >
+                {"Voir " + (toggle ? "moins" : "plus")}
             </button>
-            {
-                toggle && (
-                    <article className="experience__position-detail__content">
-                        <ul>
-                            {position.details.map((detail, detailIndex) => (
-                                <li key={detailIndex}>{detail}</li>
-                            ))}
-                        </ul>
-                    </article>
-                )
-            }
+            {toggle && (
+                <article className="experience__position-detail__content">
+                    <ul>
+                        {position.details.map((detail, detailIndex) => (
+                            <li key={detailIndex}>{detail}</li>
+                        ))}
+                    </ul>
+                </article>
+            )}
         </li>
     );
 }
 
-export function Experiences () {
-    const data: Experience[] = useMemo(()=> [
-        {
-            company: fivescryo,
-            positions: [
-                {
-                    label: "Ingénieur Systèmes, Réseau & Cybersécurité",
-                    start: new Date(2022, 10),
-                    details: [
-                        "Application des stratégies de sécurité (techniques et organisationnelles)",
-                        "Administration du SI Fives Cryo",
-                        "Correction des vulnérabilités",
-                        "Migration de serveurs Linux & Windows",
-                        "Sécurisation des Active Directory de la Business Line Energy | Cryogenics (soit 4 fiiales Fives dont 3 internationales)",
-                        "Mise en oeuvre de directives",
-                        "Gestion et Organisation des activités du Cybermoi/S sur plusieurs filiales Fives",
-                        "Participation à la Cartographie OT et SI",
-                        "Missions IT diverses",
-                    ],
-                    tags: ["CDI"],
-                },
-                {
-                    label: "Chargé de Missions IT",
-                    start: new Date(2021, 9),
-                    end:  new Date(2022, 10),
-                    details: ["Sensibilisation des Utilisateurs sur la cybersécurité", "Administration du SI Fives Cryo (voir plus bas pour les tâches d'administration)", "Mise en oeuvre de la politique SI groupe au sein de la société"],
-                    tags: ["Apprentissage"],
-                },
-                {
-                    label: "Administrateur Systèmes & Réseaux",
-                    start: new Date(2020, 9),
-                    end: new Date(2021, 8),
-                    details: ["Supervision & accompagnement d'un apprenti Technicien IT", "Administration GED & GED Technique", "Administration Serveurs (migration, gestion hyperviseur)", "Administration AD et Serveur de fichiers", "Administration MDM", "Administration Systèmes", "Administration réseaux"],
-                    tags: ["Apprentissage"],
-                },
-                {
-                    label: "Technicien Informatique",
-                    start: new Date(2020, 7),
-                    end: new Date(2021, 8),
-                    details: ["Gestion de Parc", "Accompagnement Utilisateurs", "Gestion & achats des consommables IT - Administration Serveurs (migration, gestion hyperviseur)", "Administration AD et Serveur de fichiers", "Formation Utilisateurs (Outils M365, Cybersécurité, Gestion de mdp...)"],
-                    tags: ["CDD"],
-                },
-                {
-                    label: "Technicien Informatique",
-                    start: new Date(2018, 7),
-                    end: new Date(2020, 6),
-                    details: ["Gestion de Parc", "Accompagnement Utilisateurs", "Gestion & achats des consommables IT", "Implémentation d'un serveur de stratégies réseaux", "Implémentation d'un serveur de déploiement de postes"],
-                    tags: ["Apprentissage"],
-                }
-            ]
-        },
-        {
-            company: regiongrandest,
-            positions: [
-                {
-                    label: "Conseiller régional des jeunes",
-                    start: new Date(2020, 0),
-                    end: new Date(2022, 0),
-                    details: ["Attribution de subvention après délibération en comité sur les dossiers présentés", "Participation à des actions de sensibilisations centrés sur la politique Jeunesse de la région"],
-                    tags: ["Mission Publique"],
-                }
-            ]
-        }
-    ], []);
-
-    const getExperienceDuration = useCallback((startPosition: Position, endPosition: Position) =>
-        getPeriodDuration(startPosition.start, endPosition.end)
-    , []);
-
-    const experiences = useMemo(() =>
-        data.map(({ company, positions }) =>
-            <div className="experience" key={company.id}>
-                <div className="experience__company">
-                    <img height="60" width="60" className="experience__company-logo" src={`/images/companies/${company.id}.svg`} alt={company.name} />
-                    <div>
-                        <h4 className="experience__company-name">{company.name}</h4>
-                        <p className="experience__company-location">{company.location} - {getExperienceDuration(positions[positions.length - 1], positions[0])}</p>
-                    </div>
-                </div>
-                <ul className="experience__positions">
+export function Experiences() {
+    const data: Experience[] = useMemo(
+        () => [
+            {
+                company: alfalaval,
+                positions: [
                     {
-                        positions.map((position, positionIndex)=> (
-                            <ExperienceItem key={positionIndex} position={ position }/>
-                        ))
-                    }
-                </ul>
-            </div>
-        ), [data, getExperienceDuration]
+                        label: "Responsable Informatique & Cybersécurité BU",
+                        start: new Date(2026, 8),
+                        details: [
+                            "Management direct de l'équipe locale Support et Infrastructure (3 personnes)",
+                            "Management fonctionnel et opérationnel des équipes informatiques de la BU (Suisse : 2 personnes / Chine : 2 personnes)",
+                            "Gestion des budgets consommables, investissements et exploitation IT",
+                            "Communication informatique société",
+                            "Responsable infrastructures du SI de la BU (4 sociétés : France, Suisse, USA, Chine)",
+                            "Coordination des projets informatiques BU (ressources internes et prestataires externes)",
+                            "Garantie du processus cybersécurité de la BU (supervision des projets cyber, remédiation des vulnérabilités, actions de sensibilisation)",
+                            "Coordination de la transition Fives → Alfa Laval avec les équipes du groupe Alfa Laval",
+                            "Reporting informatique (KPI cyber, indicateurs de performance IT)",
+                        ],
+                        tags: ["CDI"],
+                    },
+                    {
+                        label: "Ingénieur Systèmes, Réseaux & Cybersécurité",
+                        start: new Date(2025, 7),
+                        end: new Date(2026, 8),
+                        details: [
+                            "Application des stratégies de sécurité (techniques et organisationnelles)",
+                            "Administration générale du SI local Alfa Laval Golbey",
+                            "Correction des vulnérabilités détectées par les outils implémentés (Pentesting automatisé, EDR, détection de vulnérabilités)",
+                            "Migration de serveurs Linux & Windows",
+                            "Tutorat des apprentis IT",
+                            "Accompagnement à la transition Fives → Alfa Laval",
+                            "Participation à la cartographie OT et SI",
+                            "Missions IT diverses",
+                        ],
+                        tags: ["CDI"],
+                    },
+                ],
+            },
+            {
+                company: fivescryo,
+                positions: [
+                    {
+                        label: "Ingénieur Systèmes, Réseaux & Cybersécurité",
+                        start: new Date(2022, 10),
+                        end: new Date(2025, 7),
+                        details: [
+                            "Application des stratégies de sécurité (techniques et organisationnelles)",
+                            "Administration du SI Fives Cryo",
+                            "Correction des vulnérabilités",
+                            "Migration de serveurs Linux & Windows",
+                            "Sécurisation des Active Directory de la Business Line Energy | Cryogenics (soit 4 fiiales Fives dont 3 internationales)",
+                            "Mise en oeuvre de directives",
+                            "Gestion et Organisation des activités du Cybermoi/S sur plusieurs filiales Fives",
+                            "Participation à la Cartographie OT et SI",
+                            "Missions IT diverses",
+                        ],
+                        tags: ["CDI"],
+                    },
+                    {
+                        label: "Chargé de Missions IT",
+                        start: new Date(2021, 9),
+                        end: new Date(2022, 10),
+                        details: [
+                            "Sensibilisation des Utilisateurs sur la cybersécurité",
+                            "Administration du SI Fives Cryo (voir plus bas pour les tâches d'administration)",
+                            "Mise en oeuvre de la politique SI groupe au sein de la société",
+                        ],
+                        tags: ["Apprentissage"],
+                    },
+                    {
+                        label: "Administrateur Systèmes & Réseaux",
+                        start: new Date(2020, 9),
+                        end: new Date(2021, 8),
+                        details: [
+                            "Supervision & accompagnement d'un apprenti Technicien IT",
+                            "Administration GED & GED Technique",
+                            "Administration Serveurs (migration, gestion hyperviseur)",
+                            "Administration AD et Serveur de fichiers",
+                            "Administration MDM",
+                            "Administration Systèmes",
+                            "Administration réseaux",
+                        ],
+                        tags: ["Apprentissage"],
+                    },
+                    {
+                        label: "Technicien Informatique",
+                        start: new Date(2020, 7),
+                        end: new Date(2021, 8),
+                        details: [
+                            "Gestion de Parc",
+                            "Accompagnement Utilisateurs",
+                            "Gestion & achats des consommables IT - Administration Serveurs (migration, gestion hyperviseur)",
+                            "Administration AD et Serveur de fichiers",
+                            "Formation Utilisateurs (Outils M365, Cybersécurité, Gestion de mdp...)",
+                        ],
+                        tags: ["CDD"],
+                    },
+                    {
+                        label: "Technicien Informatique",
+                        start: new Date(2018, 7),
+                        end: new Date(2020, 6),
+                        details: [
+                            "Gestion de Parc",
+                            "Accompagnement Utilisateurs",
+                            "Gestion & achats des consommables IT",
+                            "Implémentation d'un serveur de stratégies réseaux",
+                            "Implémentation d'un serveur de déploiement de postes",
+                        ],
+                        tags: ["Apprentissage"],
+                    },
+                ],
+            },
+            {
+                company: regiongrandest,
+                positions: [
+                    {
+                        label: "Conseiller régional des jeunes",
+                        start: new Date(2020, 0),
+                        end: new Date(2022, 0),
+                        details: [
+                            "Attribution de subvention après délibération en comité sur les dossiers présentés",
+                            "Participation à des actions de sensibilisations centrés sur la politique Jeunesse de la région",
+                        ],
+                        tags: ["Engagement citoyen"],
+                    },
+                ],
+            },
+        ],
+        []
+    );
+
+    const getExperienceDuration = useCallback(
+        (startPosition: Position, endPosition: Position) =>
+            getPeriodDuration(startPosition.start, endPosition.end),
+        []
+    );
+
+    const experiences = useMemo(
+        () =>
+            data.map(({ company, positions }) => (
+                <div className="experience" key={company.id}>
+                    <div className="experience__company">
+                        <img
+                            height="60"
+                            width="60"
+                            className="experience__company-logo"
+                            src={`/images/companies/${company.id}.svg`}
+                            alt={company.name}
+                        />
+                        <div>
+                            <h4 className="experience__company-name">
+                                {company.name}
+                            </h4>
+                            <p className="experience__company-location">
+                                {company.location} -{" "}
+                                {getExperienceDuration(
+                                    positions[positions.length - 1],
+                                    positions[0]
+                                )}
+                            </p>
+                        </div>
+                    </div>
+                    <ul className="experience__positions">
+                        {positions.map((position, positionIndex) => (
+                            <ExperienceItem
+                                key={positionIndex}
+                                position={position}
+                            />
+                        ))}
+                    </ul>
+                </div>
+            )),
+        [data, getExperienceDuration]
     );
 
     return (
         <section className="section-experiences" id="experiences">
             <Header content="Experiences professionnelles" />
-            <div className="section-experiences__wrapper">
-                { experiences }
-            </div>
+            <div className="section-experiences__wrapper">{experiences}</div>
         </section>
     );
 }
