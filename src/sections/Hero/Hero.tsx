@@ -17,10 +17,8 @@ export function Hero () {
                     </h1>
                     <h2 className='section-hero__subcontent'>
                         <TypeMachine sentences={[
-                            "Ingénieur Systèmes chez Fives Cryo.",
-                            "Ingénieur Réseaux chez Fives Cryo.",
-                            "Ingénieur Cybersécurité chez Fives Cryo.",
-                            "Ingénieur chez vous ?"
+                            "Responsable Informatique & Cybersécurité BU chez Alfa Laval",
+                            "Responsable Informatique & Cybersécurité chez vous ?"
                         ]} />
                     </h2>
                     <div className="section-hero__actions">
